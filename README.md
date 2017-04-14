@@ -5,17 +5,22 @@ This project is about creating a game and practicing wrtiting unit tests (or oth
 ## Technologies 
 
  * Java 
- * Maven 
+ * Maven ? 
  * ? 
 
-## How to build 
+## How to run
 
 TODO describe
 
-    mvn clean install
 
 ## How to test 
 
 TODO describe
 
     mvn clean test
+    
+## How to build 
+
+TODO describe
+
+    mvn clean install
