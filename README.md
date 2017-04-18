@@ -8,6 +8,10 @@ This project is about creating a game and practicing wrtiting unit tests (or oth
  * Maven ? 
  * ? 
 
+## Where are docs
+
+TODO
+
 ## How to run
 
 TODO describe
