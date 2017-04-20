@@ -1,6 +1,6 @@
 package com.dxc.gameproject.gui;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class BoardPanel{
 
