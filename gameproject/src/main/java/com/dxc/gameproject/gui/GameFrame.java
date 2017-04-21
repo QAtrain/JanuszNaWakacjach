@@ -37,6 +37,8 @@ public class GameFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700,700);
         frame.setVisible(true);
+
+        //ytutuytuytuyt
     }
 
 }
