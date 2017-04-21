@@ -9,3 +9,4 @@ public class BoardPanel{
 // Test
 // Test2
 //Test 3fdsgdsgds
+// Nowy test 21.04, 8:07
