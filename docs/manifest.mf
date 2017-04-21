@@ -1,3 +1,87 @@
-Manifest-Version: 1.0
-X-COMMENT: Main-Class will be added automatically by build
+MANIFEST HACKERA
 
+Sumienie hackera
+(autor: Mentor, 8 stycznia 1986)
+
+Dzisiaj zatrzymano kolejnego, wszystkie gazety o tym trąbią:
+"ARESZTOWANIE NASTOLATKA ZAMIESZANEGO W PRZESTĘPSTWA KOMPUTEROWE",
+"HACKER PODEJRZANY O FAŁSZOWANIE DANYCH W SYSTEMACH BANKOWYCH",...
+
+Cholerne dzieciaki. Wszystkie takie same.
+
+Ty, dumny ze swego mózgu rodem z technologii lat pięćdziesiątych,
+ze swoim bladym pojęciem o psychologii, czy spróbowałeś kiedyś
+spojrzeć w oczy hackera -- i czy odważyłeś się zajrzeć głębiej?
+Czy kiedykolwiek zastanowiłeś się nad jego motywami? Warunkami,
+które go ukształtowały?
+
+Jestem hackerem. Wejdź do mojego świata...
+
+...który zaczyna się w szkole. Przewyższam większość dzieciaków
+inteligencją, nudzą mnie bzdury, którymi nas karmią...
+
+Parszywy leń. Jest taki sam, jak wszyscy inni.
+
+Chodzę do szkoły średnej. Po piętnaście razy dziennie wyjaśniają
+mi zasadę redukowania ułamków. Ale ja ją rozumiem! "Nie, proszę
+pani, umiem policzyć to w pamięci, nie muszę wypisywć na tablicy
+wszystkich etapów..."
+
+Cholerny dzieciak, pewnie ściągnął to zadanie. Typowe.
+
+Dzisiaj poznałem coś nowego -- odkryłem komputer.
+
+Hej, to jest coś dla mnie! Robi to, co mu każę, a myli się tylko
+w wyniku mojego błedu. Nie dlatego, że mnie nie lubi, lub że się
+mnie boi... Albo myśli, że ze mnie taki mądrala...
+
+Przeklęty szczeniak. Gdyby mu pozwolić, grałby na komputerze cały
+dzień. Oni wszyscy jednakowi.
+
+...i stało się! Linie telefoniczne otworzyły mi bramę do świata
+upajającego jak heroina pulsująca w żyłach ćpuna! Elektronicznym
+sygnałem przekraczam wrota szukając ucieczki od codzienności,
+głupoty i niesprawiedliwości... i znajduję podobnych sobie.
+
+"Tak! To tu! Tu jest moje miejsce!"
+
+Znam tutaj wszystkich... nawet jeśli nigdy was nie spotkałem,
+nie widziałem. Może więcej o sobie nie usłyszymy, ale znam was,
+znam was wszystkich!
+
+Cholerny dzieciak, znów blokuje telefon... wszyscy są tacy sami.
+
+A żebyś wiedział, że owszem, tacy sami! W szkole wydzielano nam
+papkę, gdy pragnęliśmy steku... a pozostawione przez Was ochłapy
+były przeżute i bez smaku. Sadyści pastwili się nad nami, anemicy
+ignorowali... Ci, którzy umieli dostrzec nasz zapał i chcieli
+nas czegoś nauczyć byli nieliczni jak krople wody na pustyni.
+
+To jest teraz nasz świat. Świat elektronów, przełączników, pięk-
+na impulsu. Korzystamy z istniejących usług, które, gdyby nie zaś-
+lepione mamoną indywidua, dostępne byłyby pół-darmo. A Wy nazywa-
+cie nas przestępcami. Poznajemy -- a Wy mówicie o nas "przestępcy".
+
+Pragniemy wiedzy -- ale dla Was jesteśmy przestępcami.
+
+Istniejemy poza kolorem skóry, narodowością, czy religijnymi spo-
+rami. A Wy nazywacie nas przestępcami. To Wy tworzycie bomby
+atomowe, bogacicie się na wojnach, zabijacie i kradniecie usiłu-
+jąc wmówić nam, że to dla naszego dobra. Ale to nas uważacie za
+przestępców.
+
+O tak, jestem przestępcą. Moją zbrodnią jest ciekawość. Moim prze-
+stępstwem -- ocenianie innych na nie podstawie ich wyglądu, lecz
+ich słów i przemyśleń. Najcięższym zaś przestępstwem jest bycie
+mądrzejszym od Was -- a tego mi nigdy nie będziecie w stanie wyba-
+czyć.
+
+Jestem hackerem; oto mój Manifest. Możesz mnie powstrzymać, nigdy
+jednak nie powstrzymasz nas wszystkich. Bo my wszyscy jesteśmy
+tacy sami...
+
+---
+
+Tekst oryginalny: Copyright 1986 by Loyd Blankenship (mentor @ blankenship.com)
+All rights reserved.
+Tłumaczenie: CC-BY © 1999 by tsca @ sdf.lonestar.org
