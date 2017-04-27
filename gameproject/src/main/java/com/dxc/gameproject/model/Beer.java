@@ -6,6 +6,7 @@ import java.util.Observer;
 /**
  * Created by kuzniar on 2017-04-26.
  * Beer is an object placed on map. Beer position during one level is constant.
+ * Beer
  */
 public class Beer implements Observer{
     private int beerPositionX;
