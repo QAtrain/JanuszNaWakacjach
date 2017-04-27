@@ -32,7 +32,7 @@ public class Game {
         grid = new Grid();
         //TODO Janusz not ready
         //janusz = new Janusz();
-        beer = new Beer();
+        beer = new Beer(0,0);
 
         createGame();
     }
