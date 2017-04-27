@@ -1,9 +1,9 @@
 package com.dxc.gameproject.model;
 
 /**
- * Map resembles x / y grid on which Janusz and Beer are positioned.
+ * Grid resembles x / y grid on which Janusz and Beer are positioned.
  */
-public class Map {
+public class Grid {
 
     /** Minimal grid length. */
     static final int LENGTH_MIN = 4;
@@ -14,17 +14,17 @@ public class Map {
     /** Maximum grid's width */
     static final int WIDTH_MAX = 16;
 
-    /** Map's current length. */
+    /** Grid's current length. */
     int length;
-    /** Map's current width. */
+    /** Grid's current width. */
     int width;
 
-    /** This method initializes map. */
-    void createMap() {
-        System.out.println("Creating map...");
+    /** This method initializes grid. */
+    void createGrid() {
+        System.out.println("Creating grid...");
         //TODO set length
         //TODO set width
-        System.out.println("Map created.");
+        System.out.println("Grid created.");
     }
 
 }

@@ -1,7 +1,7 @@
 package com.dxc.gameproject.model;
 
 /**
- * This is one small game on one level. It contains map, timer, janusz and beer.
+ * This is one small game on one level. It contains grid, timer, janusz and beer.
  *
  * Janusz needs to pick beer within timer frames to win the game. In case Janusz
  * does not pick beer within timer frames the beer is very warm - he looses the game.
@@ -9,10 +9,10 @@ package com.dxc.gameproject.model;
  * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
 public class Game {
-    /** Map or grid for this game. */
-    Map map;
+    /** Grid or grid for this game. */
+    Grid grid;
 
-    /** Janusz standing on the map. */
+    /** Janusz standing on the grid. */
     // TODO Janusz not ready
     // Janusz janusz;
 
@@ -29,7 +29,7 @@ public class Game {
 
 
     public Game() {
-        map = new Map();
+        grid = new Grid();
         //TODO Janusz not ready
         //janusz = new Janusz();
         beer = new Beer();
@@ -41,7 +41,7 @@ public class Game {
     private void createGame() {
         System.out.println("Creating game...");
 
-        map.createMap();
+        grid.createGrid();
         //TODO create rest of game
         setTimer();
 
