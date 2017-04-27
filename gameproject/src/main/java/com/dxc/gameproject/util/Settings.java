@@ -4,6 +4,7 @@ import org.omg.CORBA.TIMEOUT;
 
 /**
  * Created by ratamari on 27.04.2017.
+ * Game Settings
  */
 public enum Settings {
     LIFES(3),
