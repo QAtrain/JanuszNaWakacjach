@@ -5,8 +5,7 @@ This project is about exercizing creating a game and practicing wrtiting unit te
 ## Technologies 
 
  * Java 
- * Maven ? 
- * ? 
+ * Maven  
 
 
 ## Where are docs
