@@ -1,6 +1,6 @@
 **Welcome to 'Janusz na wakacjach' game!** 
 
-This project is about creating a game and practicing wrtiting unit tests (or other) for it. 
+This project is about exercizing creating a game and practicing wrtiting unit tests (or other) for it. 
 
 ## Technologies 
 
@@ -8,13 +8,31 @@ This project is about creating a game and practicing wrtiting unit tests (or oth
  * Maven ? 
  * ? 
 
+
 ## Where are docs
 
-TODO
+Under [docs/](.docs) folder.
+
+
+## How to setup 
+
+Clone github repo: 
+
+    git clone https://github.com/QAtrain/janusz-na-wakacjach.git
+
+
+## How to setup in IntelliJ
+
+Open IntelliJ > **File > New > Project from Existing Sources... > Maven > select "Search for projects recursively" and "import Maven projects automatically" > Next > Next** 
+
 
 ## How to run
 
-TODO describe
+In IntelliJ: 
+
+Right click on `MainApp` class and click *Run*. 
+
+TODO run using Maven
 
 
 ## How to test 
@@ -22,6 +40,7 @@ TODO describe
 TODO describe
 
     mvn clean test
+    
     
 ## How to build 
 
