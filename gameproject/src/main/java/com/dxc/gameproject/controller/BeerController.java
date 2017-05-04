@@ -7,9 +7,6 @@ import javax.swing.*;
 import java.util.Observable;
 import java.util.Observer;
 
-/**
- * Created by ratamari on 27.04.2017.
- */
 public class BeerController extends Observable{
     private BeerView view;
     private Beer beer;
