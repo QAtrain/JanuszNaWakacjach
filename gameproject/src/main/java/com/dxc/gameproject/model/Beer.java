@@ -10,9 +10,6 @@ public class Beer implements Observer{
     private int beerPositionX;
     private int beerPositionY;
 
-    /* ddd
-
-     */
 
     public Beer(int beerPositionX, int beerPositionY) {
         this.beerPositionX = beerPositionX;

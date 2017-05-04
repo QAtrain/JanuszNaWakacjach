@@ -6,7 +6,7 @@ package com.dxc.gameproject.model;
  * Janusz needs to pick beer within timer frames to win the game. In case Janusz
  * does not pick beer within timer frames the beer is very warm - he looses the game.
  *
- * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it) abc
+ * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
 public class Game {
     /** Grid or grid for this game. */
