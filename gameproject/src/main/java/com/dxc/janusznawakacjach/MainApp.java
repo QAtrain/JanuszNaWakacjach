@@ -1,6 +1,6 @@
-package com.qatrain.janushgame;
+package com.dxc.janusznawakacjach;
 
-import com.qatrain.janushgame.model.Game;
+import com.dxc.janusznawakacjach.model.Game;
 
 /**
  * This class starts the whole game.

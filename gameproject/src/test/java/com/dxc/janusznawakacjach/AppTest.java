@@ -1,4 +1,4 @@
-package com.qatrain.janushgame;
+package com.dxc.janusznawakacjach;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

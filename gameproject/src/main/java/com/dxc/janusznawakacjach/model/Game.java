@@ -1,4 +1,4 @@
-package com.qatrain.janushgame.model;
+package com.dxc.janusznawakacjach.model;
 
 /**
  * This is one small game on one level. It contains grid, timer, janusz and beer.

@@ -1,4 +1,4 @@
-package com.qatrain.janushgame.util;
+package com.dxc.janusznawakacjach.util;
 
 import org.omg.CORBA.TIMEOUT;
 

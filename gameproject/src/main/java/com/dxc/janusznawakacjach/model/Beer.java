@@ -1,4 +1,4 @@
-package com.qatrain.janushgame.model;
+package com.dxc.janusznawakacjach.model;
 
 import java.util.Observable;
 import java.util.Observer;

@@ -1,4 +1,4 @@
-package com.qatrain.janushgame.view;
+package com.dxc.janusznawakacjach.view;
 
 import javax.swing.*;
 
