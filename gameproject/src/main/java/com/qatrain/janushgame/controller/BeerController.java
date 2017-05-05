@@ -1,7 +1,7 @@
-package janushgame.dxc.janusznawakacjach.controller;
+package com.qatrain.janushgame.controller;
 
-import janushgame.dxc.janusznawakacjach.model.Beer;
-import janushgame.dxc.janusznawakacjach.view.BeerView;
+import com.qatrain.janushgame.model.Beer;
+import com.qatrain.janushgame.view.BeerView;
 
 import java.util.Observable;
 

@@ -1,6 +1,6 @@
 // Wyświetlanie okienka z grą
 
-package janushgame.dxc.janusznawakacjach.gui;
+package com.qatrain.janushgame.gui;
 
 import javax.swing.JFrame;
 

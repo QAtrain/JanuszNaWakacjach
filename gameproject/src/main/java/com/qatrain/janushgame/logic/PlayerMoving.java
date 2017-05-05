@@ -1,4 +1,4 @@
-package janushgame.dxc.janusznawakacjach.logic;
+package com.qatrain.janushgame.logic;
 
 public class PlayerMoving {
 
