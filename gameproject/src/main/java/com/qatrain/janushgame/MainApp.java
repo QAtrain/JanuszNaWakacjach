@@ -1,6 +1,6 @@
-package com.dxc.gameproject;
+package com.qatrain.janushgame;
 
-import com.dxc.gameproject.model.Game;
+import com.qatrain.janushgame.model.Game;
 
 /**
  * This class starts the whole game.
