@@ -1,6 +1,6 @@
 // GUI samej gry
 
-package com.dxc.gameproject.gui;
+package com.qatrain.janushgame.gui;
 
 import javax.swing.JPanel;
 
