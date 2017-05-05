@@ -1,6 +1,6 @@
 // GUI samej gry
 
-package com.dxc.janusznawakacjach.gui;
+package janushgame.dxc.janusznawakacjach.gui;
 
 import javax.swing.JPanel;
 

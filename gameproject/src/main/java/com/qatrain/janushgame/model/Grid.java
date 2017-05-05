@@ -1,4 +1,4 @@
-package com.dxc.janusznawakacjach.model;
+package com.qatrain.janushgame.model;
 
 /**
  * Grid resembles x / y grid on which Janusz and Beer are positioned.

@@ -1,4 +1,4 @@
-package com.dxc.janusznawakacjach;
+package com.qatrain.janushgame;
 
 /**
  * This class starts the whole game.
