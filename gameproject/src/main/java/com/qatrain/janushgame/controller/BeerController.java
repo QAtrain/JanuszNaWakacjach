@@ -1,15 +1,10 @@
-package com.dxc.gameproject.controller;
+package com.qatrain.janushgame.controller;
 
-import com.dxc.gameproject.model.Beer;
-import com.dxc.gameproject.view.BeerView;
+import com.qatrain.janushgame.model.Beer;
+import com.qatrain.janushgame.view.BeerView;
 
-import javax.swing.*;
 import java.util.Observable;
-import java.util.Observer;
 
-/**
- * Created by ratamari on 27.04.2017.
- */
 public class BeerController extends Observable{
     private BeerView view;
     private Beer beer;
