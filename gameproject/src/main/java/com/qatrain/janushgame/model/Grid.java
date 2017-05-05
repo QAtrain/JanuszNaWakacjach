@@ -22,9 +22,20 @@ public class Grid {
     /** This method initializes grid. */
     void createGrid() {
         System.out.println("Creating grid...");
-        //TODO set length
-        //TODO set width
-        System.out.println("Grid created.");
+
+
+        int nought = 1;
+        int cross = 2;
+
+        int[][] elements = new int[3][3];
+        elements[1][1] = nought;
+        elements[2][2] = cross;
+        elements[0][0] = nought;
+        elements[1][2] = cross;
+        elements[0][2] = nought;
+        elements[0][1] = cross;
+
+        System.out.print(elements);
     }
 
 }
