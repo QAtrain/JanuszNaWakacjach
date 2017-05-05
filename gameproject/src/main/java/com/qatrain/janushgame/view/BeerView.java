@@ -1,4 +1,4 @@
-package com.dxc.gameproject.view;
+package com.qatrain.janushgame.view;
 
 import javax.swing.*;
 

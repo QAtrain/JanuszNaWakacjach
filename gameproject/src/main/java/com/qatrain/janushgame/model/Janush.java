@@ -1,4 +1,4 @@
-package com.dxc.gameproject.model;
+package com.qatrain.janushgame.model;
 
 /**
  * Class Janush describe object which appear in the map and can change position. His goal is to collect beer.
