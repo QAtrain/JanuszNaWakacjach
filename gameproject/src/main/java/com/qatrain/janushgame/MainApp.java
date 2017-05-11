@@ -11,8 +11,10 @@ public class MainApp {
     public static void main(String ...args) {
         System.out.println("GAME START!");
 
-        game = new Game();
-        game.play();
+        for (int lives=0; lives<3; lives++) {
+            game = new Game();
+            game.play();
+        }
 
         System.out.println("GAME OVER! " + game);
     }

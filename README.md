@@ -36,8 +36,7 @@ TODO run using Maven
 
 ## How to test 
 
-TODO describe
-
+    cd gameproject
     mvn clean test
     
     
