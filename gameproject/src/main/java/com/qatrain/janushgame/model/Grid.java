@@ -23,7 +23,7 @@ public class Grid {
     void createGrid() {
         System.out.println("Creating grid...");
 
-        System.out.print(elements);
+        System.out.print("Grid created.");
     }
 
 }
