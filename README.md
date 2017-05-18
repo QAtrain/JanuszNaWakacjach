@@ -44,8 +44,7 @@ TODO
 
 ## How to test 
 
-TODO describe
-
+    cd gameproject
     mvn clean test
     
     

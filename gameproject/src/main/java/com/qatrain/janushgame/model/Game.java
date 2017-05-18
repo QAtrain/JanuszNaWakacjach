@@ -41,7 +41,6 @@ public class Game {
     private void createGame() {
         System.out.println("Creating game...");
 
-        grid.createGrid();
         //TODO create rest of game
         setTimer();
 
@@ -56,6 +55,8 @@ public class Game {
     /** Starts the game. */
     public void play() {
         System.out.println("Janusz starts playing...");
+
+        System.out.println(grid.drawTable());
 
         //TODO play in a loop
         //TODO count time down
