@@ -33,15 +33,13 @@ public class Grid {
     }
 
     /**
-     * Setting algorithm which can create random Grid using static values inside constructor
+     * Setting algorithm which can create random Grid using static values inside method
      */
     public void createGrid() {
         System.out.println("Creating grid...");
         rows = (int) (Math.random() * ROWS_MAX) + ROWS_MIN; //Random function from Math class returns the value between 0 and 1, so we have to use algorithm to create Grid with 3 <= size <= 16
         columns = (int) (Math.random() * COLUMNS_MAX) + COLUMNS_MIN; //The same as above
         board = new int[rows][columns];
-        String calculatedString = drawTable();
-        //System.out.println(calculatedString);
         System.out.println("Grid created.");
     }
 

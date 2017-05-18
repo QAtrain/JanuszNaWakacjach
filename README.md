@@ -27,11 +27,19 @@ Open IntelliJ > **File > New > Project from Existing Sources... > Maven > select
 
 ## How to run
 
-In IntelliJ: 
+### In IntelliJ
 
-Right click on `MainApp` class and click *Run*. 
+Right click on `MainApp` class and click *Run*.
 
-TODO run using Maven
+### From command line
+    
+From classes directory (`./target/classes` when building using IntelliJ):
+
+    java -cp . com.dxc.gameproject.MainApp
+
+### Maven 
+
+TODO 
 
 
 ## How to test 
