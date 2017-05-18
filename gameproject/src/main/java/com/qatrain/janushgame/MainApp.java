@@ -13,6 +13,7 @@ public class MainApp {
 
         for (int lives=0; lives<3; lives++) {
             game = new Game();
+
             game.play();
         }
 
