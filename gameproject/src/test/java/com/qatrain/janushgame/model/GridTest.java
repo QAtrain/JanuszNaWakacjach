@@ -2,6 +2,9 @@ package com.qatrain.janushgame.model;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import static org.junit.Assert.*;
+
+
 
 /** Tests Grid methods. */
 public class GridTest {
@@ -10,14 +13,32 @@ public class GridTest {
     @Test
     public void verifyJanuszAndBeerDisplayedOnTheGrid() {
 
+
     }
 
     @Ignore
     @Test
     public void verifyAmountOfPaleczekInFirstAndLastLine() {
-        //Grid grid = new Grid();
-        //String printout = grid.drawTable();
-        //assert printout.contains("|"); //TODO this is dummy test
+        Grid grid = new Grid();
+        String printout = grid.drawTable();
+        System.out.println(grid.drawTable());
+        char toCheck = '|';
+        int count = 0;
+
+        for (int i = 0; i < printout.length(); i++) {
+            if (printout.charAt(i) == toCheck) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
+
+       int rows = grid.rows;
+       int columns = grid.columns;
+
+       int total = rows*columns;
+
+        assertEquals(total, count);
     }
 
     @Ignore
