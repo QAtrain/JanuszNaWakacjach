@@ -3,6 +3,8 @@ package com.qatrain.janushgame.model;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 /** Tests Grid methods. */
 public class GridTest {
 
@@ -23,8 +25,24 @@ public class GridTest {
     @Ignore
     @Test
     public void verifyAmountOfKreseczkiInSecondLineAndOneBeforeLast() {
+        Grid grid = new Grid();
+        grid.createGrid();
 
+        String printout = grid.drawTable();
+        System.out.println(grid.drawTable());
+
+        int counter = printout.split("--", -1).length - 1;
+//
+        System.out.println(counter);
+
+        int rows = grid.rows;
+        int columns = grid.columns;
+
+        int total = (rows-1)*columns;
+
+        assertEquals(total, counter);
     }
+
 
     @Ignore
     @Test
