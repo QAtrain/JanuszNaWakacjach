@@ -1,5 +1,8 @@
 package com.qatrain.janushgame.model;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  * This is one small game on one level. It contains grid, timer, janusz and beer.
  *
@@ -9,6 +12,9 @@ package com.qatrain.janushgame.model;
  * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
 public class Game {
+    Timer timer1;
+    int gameCounter = 0;
+
     /** Grid or grid for this game. */
     Grid grid;
 
@@ -29,34 +35,42 @@ public class Game {
 
 
     public Game() {
-        grid = new Grid();
         //TODO Janusz not ready
         //janusz = new Janusz();
-        beer = new Beer(0,0);
-
+        //beer = new Beer(0,0);
         createGame();
+    }
+
+    class Task extends TimerTask {
+        @Override
+        public void run() {
+            gameCounter++;
+            System.out.println(gameCounter);
+            Grid grid = new Grid();
+            System.out.println(grid.drawTable());
+
+            if (gameCounter == 3) {
+                timer1.cancel();
+            }
+        }
     }
 
     /** This method initializes game. */
     private void createGame() {
         System.out.println("Creating game...");
-
-        //TODO create rest of game
         setTimer();
-
         System.out.println("Game created.");
     }
 
     /** Sets the timer. */
     private void setTimer() {
-        //TODO set timer
+        timer1 = new Timer();
+        timer1.schedule(new Task(), 0, 15000);
     }
 
     /** Starts the game. */
     public void play() {
         System.out.println("Janusz starts playing...");
-
-        System.out.println(grid.drawTable());
 
         //TODO play in a loop
         //TODO count time down

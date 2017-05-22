@@ -4,7 +4,6 @@ package com.qatrain.janushgame.model;
  * Grid resembles x / y grid on which Janusz and Beer are positioned.
  */
 public class Grid {
-    public String drawTableResult;
     public int rows;
     public int columns;
     public int[][] board;
