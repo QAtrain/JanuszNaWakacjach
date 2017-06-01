@@ -3,7 +3,7 @@ package com.qatrain.janushgame.model;
 /**
  * Beer is an object placed on grid. Beer position during one level is constant.
  */
-public class Beer extends Positionable {
+public class Beer extends Positioned {
 
     public Beer() {
         System.out.println("Creating beer...");

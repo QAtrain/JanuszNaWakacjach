@@ -131,13 +131,13 @@ public class Grid {
     }
 
     /**
-     * Puts a {@link Positionable} object (beer or janush) inside this grid
+     * Puts a {@link Positioned} object (beer or janush) inside this grid
      * (modifies postionX and Y of the object so that its coordinates are
      * inside this grid).
      *
      * @param object object to be put inside grid (which position will be altered)
      * */
-    public void placeInside(Positionable object) {
+    public void placeInside(Positioned object) {
         object.putOnGrid(this);
     }
 
