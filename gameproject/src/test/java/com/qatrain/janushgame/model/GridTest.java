@@ -32,14 +32,14 @@ public class GridTest {
     @Test
     public void verifyAmountOfRowsDisplayed() {
         Grid grid = new Grid();
-        String displayedGrid = grid.drawTable();
+        String displayedGrid = grid.drawTable(new Janush(), new Beer());
         System.out.println("Table preview: " + "\n" + displayedGrid); //displaying comparable Grid for preview
-        System.out.println("Number of rows should be: " + grid.rows); //displaying number of rows got from algorithm
+        System.out.println("Number of rows should be: " + grid.getWidth()); //displaying number of rows got from algorithm
 
         int rowsActuallyDisplayed = (StringUtils.countMatches(displayedGrid, "\n"))/2; //count how many times "\n" appears in displayed Grid. It must be divided by 2 because we have (--) separators which are printed with "\n" also. This method comes from common-lang3 maven dependency
         System.out.println("Number of rows displayed: " + rowsActuallyDisplayed);
 
-        Assert.assertEquals(grid.rows, rowsActuallyDisplayed); //comparing number of rows got from algorithm and displayed rows
+        Assert.assertEquals(grid.getWidth(), rowsActuallyDisplayed); //comparing number of rows got from algorithm and displayed rows
     }
 
     @Ignore
