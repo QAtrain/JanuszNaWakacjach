@@ -10,7 +10,7 @@ This project is about exercizing creating a game and practicing wrtiting unit te
 
 ## Where are docs
 
-Under [docs/](.docs) folder.
+Under [docs/](docs) folder.
 
 
 ## How to setup 
@@ -35,7 +35,7 @@ Right click on `MainApp` class and click *Run*.
     
 From classes directory (`./target/classes` when building using IntelliJ):
 
-    java -cp . com.dxc.gameproject.MainApp
+    java -cp . com.qatrain.janushgame.MainApp
 
 ### Maven 
 
