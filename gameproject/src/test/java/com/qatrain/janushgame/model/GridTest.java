@@ -32,14 +32,16 @@ public class GridTest {
     @Test
     public void verifyAmountOfRowsDisplayed() {
         Grid grid = new Grid();
-        String displayedGrid = grid.drawTable(new Janush(), new Beer());
+        String displayedGrid = grid.drawTable();
         System.out.println("Table preview: " + "\n" + displayedGrid); //displaying comparable Grid for preview
-        System.out.println("Number of rows should be: " + grid.getWidth()); //displaying number of rows got from algorithm
+        System.out.println("Number of rows should be: " + grid.getHeight()); //displaying number of rows got from algorithm
 
-        int rowsActuallyDisplayed = (StringUtils.countMatches(displayedGrid, StringUtils.repeat(" |", grid.columns) + "\n")); //compare if "|" is drawing correctly and how many times "\n" is displaying. This method comes from common-lang3 maven dependency
+        //compare if "|" is drawing correctly and how many times "\n" is displaying. This method comes from common-lang3 maven dependency
+        int rowsActuallyDisplayed = StringUtils.countMatches(displayedGrid, StringUtils.repeat(" |", grid.getWidth()) + "\n");
+
         System.out.println("Number of rows found: " + rowsActuallyDisplayed);
 
-        Assert.assertEquals(grid.getWidth(), rowsActuallyDisplayed); //comparing number of rows got from algorithm and displayed rows
+        Assert.assertEquals(grid.getHeight(), rowsActuallyDisplayed); //comparing number of rows got from algorithm and displayed rows
     }
 
     @Ignore

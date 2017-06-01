@@ -47,7 +47,7 @@ public class Grid {
     }
 
     /**
-     * This method draws Table
+     * This method draws grid with Janush and Beer on it
      */
     public String drawTable(Janush janusz, Beer beer) {
         int jx = janusz.getPositionX();
@@ -67,6 +67,24 @@ public class Grid {
                 board[by][bx] = BEER;
         }
 
+        String printout = "";
+        for (int row = 0; row < rows; ++row) {
+            printout += drawRow(board[row]);
+            if (row != rows - 1) {
+                for (int columns = 0; columns < this.columns; ++columns) {
+                    printout += "--"; //print horizontal partition
+                }
+                printout += "\n";
+            }
+        }
+
+        return printout;
+    }
+
+    /**
+     * This method draws grid without Janush and Beer on it
+     */
+    public String drawTable() {
         String printout = "";
         for (int row = 0; row < rows; ++row) {
             printout += drawRow(board[row]);
