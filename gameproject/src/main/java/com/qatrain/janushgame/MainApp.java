@@ -2,21 +2,24 @@ package com.qatrain.janushgame;
 
 import com.qatrain.janushgame.model.Game;
 
+import java.util.Timer;
+
 /**
  * This class starts the whole game.
- * */
+ */
 public class MainApp {
-    static Game game;
 
-    public static void main(String ...args) {
-        System.out.println("GAME START!");
+    public static void main(String... args) {
 
-        for (int lives=0; lives<3; lives++) {
-            game = new Game();
+        //a timer task try out:
+//        Timer timer = new Timer();
+//        //Time frame within which Janusz needs to pick the beer to win
+//        timer.schedule(
+//                new Game(),1000,15000); //This method is scheduling Game. Delay 1 second, running time = 15 seconds
+//        //always the same game will be played!
 
-            game.play();
-        }
+        //a new single game play:
+        new Game().play();
 
-        System.out.println("GAME OVER! " + game);
     }
 }

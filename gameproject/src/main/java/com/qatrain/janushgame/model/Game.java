@@ -1,76 +1,149 @@
 package com.qatrain.janushgame.model;
 
+import java.util.TimerTask;
+
 /**
  * This is one small game on one level. It contains grid, timer, janusz and beer.
- *
+ * <p>
  * Janusz needs to pick beer within timer frames to win the game. In case Janusz
  * does not pick beer within timer frames the beer is very warm - he looses the game.
- *
+ * <p>
  * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
-public class Game {
-    /** Grid or grid for this game. */
+public class Game extends TimerTask {
+
+    @Override
+    public void run() {
+        play();
+
+        if (status == Status.LOST) {
+            --lives;
+            //cancel();
+            //canceling here will stop the task from running again
+            //the timer will run still
+        }
+
+        if (lives == 0) {
+            cancel(); //at this place program should exit - it does not
+            System.out.println("GAME OVER");
+        }
+    }
+
+    int lives = Janush.LIVES_DEFAULT;
+
+    /**
+     * Grid or grid for this game.
+     */
     Grid grid;
 
-    /** Janusz standing on the grid. */
-    // TODO Janusz not ready
-    // Janusz janusz;
+    /**
+     * Janusz standing on the grid.
+     */
+    Janush janusz;
 
-    /** Beer to be picked by Janusz. */
+    /**
+     * Beer to be picked by Janusz.
+     */
     Beer beer;
 
-    /** Time frame within which Janusz needs to pick the beer to win. */
-    int timer = TIME_MAX;
-    /** Time in seconds. */
-    private static final int TIME_MAX = 15;
 
-    /** Did Janusz win (true) or loose (false)? */
-    boolean won = false;
+    /**
+     * Did Janusz win (true) or loose (false)?
+     */
+    Status status = null;
 
+    enum Status {
+        WOOOOOOOOOOOOOOOoooooooooooooN,
+        LOST,
+        LOST_BY_TIME,
+        IS_ON,
+        DID_NOT_START
+    }
 
+    /**
+     * Main Game constructor
+     */
     public Game() {
-        grid = new Grid();
-        //TODO Janusz not ready
-        //janusz = new Janusz();
-        beer = new Beer(0,0);
-
         createGame();
     }
 
-    /** This method initializes game. */
+    /**
+     * This method initializes game.
+     */
     private void createGame() {
         System.out.println("Creating game...");
 
-        //TODO create rest of game
-        setTimer();
+        grid = new Grid();
 
-        System.out.println("Game created.");
+        janusz = new Janush();
+        grid.placeInside(janusz);
+
+        beer = new Beer();
+        grid.placeInside(beer);
+
+        status = Status.DID_NOT_START;
+
+        System.out.println("Game created. \n");
+        System.out.println(this.toString());
     }
 
-    /** Sets the timer. */
-    private void setTimer() {
-        //TODO set timer
-    }
-
-    /** Starts the game. */
+    /**
+     * Starts the game.
+     */
     public void play() {
+        System.out.println("========================");
         System.out.println("Janusz starts playing...");
 
-        System.out.println(grid.drawTable());
+        status = Status.IS_ON;
+
+        System.out.println(this);
+
+        moveJanuszUp();
+        moveJanuszUp();
+
+        moveJanuszLeft();
+        moveJanuszLeft();
+
+        if (janusz.isOn(beer))
+            status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
+        else
+            status = Status.LOST;
+
 
         //TODO play in a loop
         //TODO count time down
         //TODO listen for keyboard clicks
         //TODO refresh GUI
 
-        System.out.println("Janusz is done playing.");
+        System.out.println(this);
+
+        System.out.println("Janusz is done playing. ");
+        System.out.println("========================");
+    }
+
+    private void moveJanuszLeft() {
+        janusz.moveLeft();
+        updateStatus();
+        System.out.println(this);
+    }
+
+    private void moveJanuszUp() {
+        janusz.moveUp();
+        updateStatus();
+        System.out.println(this);
+    }
+
+    private void updateStatus() {
+        if (janusz.isOn(beer))
+            status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
     }
 
     @Override
     public String toString() {
-        return "Janusz " + (won ? "won :D " : "lost :( ") +
-                (timer <= 0 ? "because timer finished. The beer is warm now. " : "Time left was " + timer + ". The beer got spilled! No beer for Janusz this time. ");
-        //TODO add beer position
-        //TODO print janusz position
+        return "Game " + status + ". \n" +
+                "Grid: \n" +
+                grid.drawTable(janusz, beer);
+
+        //(timer <= 0 ? "because timer finished. The beer is warm now. " : "Time left was " + timer + ". The beer got spilled! No beer for Janusz this time. ");
     }
 }

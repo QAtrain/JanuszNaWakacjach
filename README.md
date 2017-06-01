@@ -39,8 +39,6 @@ From classes directory (`./target/classes` when building using IntelliJ):
 
 ### Maven 
 
-TODO 
-
 
 ## How to test 
 
@@ -49,7 +47,5 @@ TODO
     
     
 ## How to build 
-
-TODO describe
 
     mvn clean install
