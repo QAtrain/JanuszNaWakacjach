@@ -4,19 +4,13 @@ import com.qatrain.janushgame.model.Game;
 
 /**
  * This class starts the whole game.
- * */
+ */
 public class MainApp {
-    static Game game;
 
-    public static void main(String ...args) {
-        System.out.println("GAME START!");
+    public static void main(String... args) {
 
-        for (int lives=0; lives<3; lives++) {
-            game = new Game();
+        Game game = new Game();
+        game.play();
 
-            game.play();
-        }
-
-        System.out.println("GAME OVER! " + game);
     }
 }
