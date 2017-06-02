@@ -1,7 +1,5 @@
 package com.qatrain.janushgame.model;
 
-import java.util.TimerTask;
-
 /**
  * This is one small game on one level. It contains grid, timer, janusz and beer.
  * <p>
@@ -10,9 +8,8 @@ import java.util.TimerTask;
  * <p>
  * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
-public class Game extends TimerTask {
-
-    @Override
+public class Game{
+    
     public void run() {
         play();
 
@@ -24,7 +21,7 @@ public class Game extends TimerTask {
         }
 
         if (lives == 0) {
-            cancel(); //at this place program should exit - it does not
+            //cancel(); //at this place program should exit - it does not
             System.out.println("GAME OVER");
         }
     }
@@ -91,34 +88,38 @@ public class Game extends TimerTask {
      * Starts the game.
      */
     public void play() {
-        System.out.println("========================");
-        System.out.println("Janusz starts playing...");
-
+        long start = System.currentTimeMillis();
+        long end = start + 5000;
         status = Status.IS_ON;
-
         System.out.println(this);
 
-        moveJanuszUp();
-        moveJanuszUp();
+        while (System.currentTimeMillis() < end) {
 
-        moveJanuszLeft();
-        moveJanuszLeft();
+            System.out.println("========================");
+            System.out.println("Janusz starts playing...");
 
-        if (janusz.isOn(beer))
-            status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
-        else
-            status = Status.LOST;
+            moveJanuszUp();
+            moveJanuszUp();
+
+            moveJanuszLeft();
+            moveJanuszLeft();
+
+            if (janusz.isOn(beer))
+                status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
+            else
+                status = Status.LOST;
 
 
-        //TODO play in a loop
-        //TODO count time down
-        //TODO listen for keyboard clicks
-        //TODO refresh GUI
+            //TODO play in a loop
+            //TODO count time down
+            //TODO listen for keyboard clicks
+            //TODO refresh GUI
 
-        System.out.println(this);
+            System.out.println(this);
 
-        System.out.println("Janusz is done playing. ");
-        System.out.println("========================");
+            System.out.println("Janusz is done playing. ");
+            System.out.println("========================");
+        }
     }
 
     private void moveJanuszLeft() {
