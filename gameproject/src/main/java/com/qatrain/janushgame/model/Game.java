@@ -83,8 +83,7 @@ public class Game extends TimerTask {
 
         status = Status.DID_NOT_START;
 
-        System.out.println("Game created. \n");
-        System.out.println(this.toString());
+        System.out.println("Game created. \n" + this);
     }
 
     /**

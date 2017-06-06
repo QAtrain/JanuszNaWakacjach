@@ -153,9 +153,4 @@ public class PositionedTest {
         assertFalse("Beer does not have same position as janusz",
                 beer.isOn(janusz));
     }
-
-
-
-
-
 }
