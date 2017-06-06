@@ -26,12 +26,12 @@ public class Janush extends Positionable {
     }
 
     public void moveUp() {
-        System.out.println("Janush moves         ^ UP ^");
+        System.out.println(this + " moves         ^ UP ^");
         positionY--;
     }
 
     public void moveLeft() {
-        System.out.println("Janush moves <<<<<<< LEFT");
+        System.out.println(this + " moves <<<<<<< LEFT");
         positionX--;
     }
 

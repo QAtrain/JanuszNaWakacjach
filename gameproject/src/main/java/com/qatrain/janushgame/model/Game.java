@@ -8,16 +8,19 @@ package com.qatrain.janushgame.model;
  * <p>
  * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
-public class Game{
-    
+public class Game {
+
     public void run() {
         play();
-
         if (status == Status.LOST) {
             --lives;
             //cancel();
             //canceling here will stop the task from running again
             //the timer will run still
+        }
+
+        if (status == Status.LOST_BY_TIME) {
+            --lives;
         }
 
         if (lives == 0) {
@@ -88,38 +91,54 @@ public class Game{
      * Starts the game.
      */
     public void play() {
-        long start = System.currentTimeMillis();
-        long end = start + 5000;
+        long start = System.currentTimeMillis(); // order current system time as start time
+        long end = start + 10000; // order end time as current system time + 10 seconds
+        boolean timeEnd = (System.currentTimeMillis() == end); // boolean condition for loop statement
+
         status = Status.IS_ON;
         System.out.println(this);
 
+        System.out.println("========================");
+        System.out.println("Janusz starts playing...");
+
         while (System.currentTimeMillis() < end) {
 
-            System.out.println("========================");
-            System.out.println("Janusz starts playing...");
-
             moveJanuszUp();
             moveJanuszUp();
 
             moveJanuszLeft();
             moveJanuszLeft();
 
-            if (janusz.isOn(beer))
+            moveJanuszUp();
+
+            moveJanuszLeft();
+            moveJanuszLeft();
+            moveJanuszLeft();
+
+            if (janusz.isOn(beer)) {
                 status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
-            else
+                System.out.println(this);
+                System.out.println("Lives left: " + lives);
+                break;
+            } else if (!janusz.isOn(beer) && timeEnd) {
+                status = Status.LOST_BY_TIME;
+                System.out.println(this);
+                System.out.println("Lives left: " + lives);
+                break;
+            } else {
                 status = Status.LOST;
-
-
-            //TODO play in a loop
-            //TODO count time down
-            //TODO listen for keyboard clicks
-            //TODO refresh GUI
-
-            System.out.println(this);
-
-            System.out.println("Janusz is done playing. ");
-            System.out.println("========================");
+                System.out.println(this);
+                System.out.println("Lives left: " + lives);
+                break;
+            }
         }
+
+        //TODO listen for keyboard clicks
+        //TODO refresh GUI
+
+        System.out.println("Janusz is done playing. ");
+        System.out.println("========================");
+
     }
 
     private void moveJanuszLeft() {
