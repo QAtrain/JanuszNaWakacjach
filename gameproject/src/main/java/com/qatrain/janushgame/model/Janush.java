@@ -35,10 +35,15 @@ public class Janush extends Positioned {
         positionX--;
     }
 
-    //TODO moveRight
+    public void moveDown() {
+        System.out.println(this + " moves         v DOWN v");
+        positionY++;
+    }
 
-    //TODO moveDown
-
+    public void moveRight() {
+        System.out.println(this + " moves >>>>>> RIGHT");
+        positionX++;
+    }
 
     @Override
     public String toString() {
