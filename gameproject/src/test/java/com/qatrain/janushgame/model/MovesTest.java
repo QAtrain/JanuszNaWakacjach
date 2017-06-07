@@ -31,9 +31,9 @@ public class MovesTest {
 
 
         //assertTrue("Janush moved left his position is Y=4; X=4",
-                janusz.isOn(beer));
+                //janusz.isOn(beer));
 
         //assertFalse("Beer does not have same position as janusz",
-                beer.isOn(janusz));
+                //beer.isOn(janusz));
     }
 }
