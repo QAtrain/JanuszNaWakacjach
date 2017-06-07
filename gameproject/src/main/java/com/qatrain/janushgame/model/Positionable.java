@@ -8,10 +8,10 @@ public abstract class Positionable {
     protected int positionY = 0;
 
     /**
-     * Places this object inside grid's frames.
-     * @param grid to be used for dimensions
+     * Places this object inside board's frames.
+     * @param board to be used for dimensions
      * */
-    public abstract void putOnGrid(Grid grid);
+    public abstract void putOnGrid(Board board);
 
     /** @return this object's position on X axis */
     public int getPositionX() {

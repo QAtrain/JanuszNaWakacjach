@@ -1,14 +1,14 @@
 package com.qatrain.janushgame.model;
 
 /**
- * Class Janush describes an object which appears on grid and can change position.
+ * Class Janush describes an object which appears on board and can change position.
  * His goal is to collect beer.
  * He gets 3 lives at the beginning.
  * When time is over Janush looses live.
  */
 public class Janush extends Positionable {
 
-    final static int LIVES_DEFAULT = 3;
+    public final static int LIVES_DEFAULT = 3;
 
     public Janush() {
         System.out.println("Creating Janush...");
@@ -17,12 +17,12 @@ public class Janush extends Positionable {
     }
 
     /**
-     * Puts this janusz on grid's last row and column.
+     * Puts this janusz on board's last row and column.
      * TODO randomize position
      * */
-    public void putOnGrid(Grid grid) {
-        positionX = grid.getWidth() - 1;
-        positionY = grid.getHeight() - 1;
+    public void putOnGrid(Board board) {
+        positionX = board.getWidth() - 1;
+        positionY = board.getHeight() - 1;
     }
 
     public void moveUp() {

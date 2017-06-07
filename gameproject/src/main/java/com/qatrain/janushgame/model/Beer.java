@@ -1,7 +1,7 @@
 package com.qatrain.janushgame.model;
 
 /**
- * Beer is an object placed on grid. Beer position during one level is constant.
+ * Beer is an object placed on board. Beer position during one level is constant.
  */
 public class Beer extends Positionable {
 
@@ -15,7 +15,7 @@ public class Beer extends Positionable {
      *
      * TODO randomize position
      * */
-    public void putOnGrid(Grid grid) {
+    public void putOnGrid(Board board) {
         positionX = 0;
         positionY = 0;
     }
