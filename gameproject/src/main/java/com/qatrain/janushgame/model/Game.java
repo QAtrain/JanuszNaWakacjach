@@ -132,6 +132,18 @@ public class Game extends TimerTask {
         System.out.println(this);
     }
 
+    private void moveJanuszRight() {
+        janusz.moveRight();
+        updateStatus();
+        System.out.println(this);
+    }
+
+    private void moveJanuszDown() {
+        janusz.moveDown();
+        updateStatus();
+        System.out.println(this);
+    }
+
     private void updateStatus() {
         if (janusz.isOn(beer))
             status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
