@@ -1,7 +1,5 @@
 package com.qatrain.janushgame.model;
 
-import java.util.TimerTask;
-
 /**
  * This is one small game on one level. It contains grid, timer, janusz and beer.
  * <p>
@@ -10,22 +8,18 @@ import java.util.TimerTask;
  * <p>
  * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
-public class Game extends TimerTask {
+public class Game {
 
-    @Override
     public void run() {
-        play();
-
-        if (status == Status.LOST) {
-            --lives;
-            //cancel();
-            //canceling here will stop the task from running again
-            //the timer will run still
-        }
-
-        if (lives == 0) {
-            cancel(); //at this place program should exit - it does not
-            System.out.println("GAME OVER");
+        while (lives > 0) {
+            play();
+            if (status == Status.LOST || status == Status.LOST_BY_TIME) {
+                --lives;
+            }
+            if (lives == 0) {
+                System.out.println("Lives left: " + lives);
+                System.out.println("GAME OVER");
+            }
         }
     }
 
@@ -90,34 +84,53 @@ public class Game extends TimerTask {
      * Starts the game.
      */
     public void play() {
-        System.out.println("========================");
-        System.out.println("Janusz starts playing...");
+        long start = System.currentTimeMillis(); // order current system time as start time
+        long end = start + 15000; // order end time as current system time + 10 seconds
+        boolean timeEnd = (System.currentTimeMillis() == end); // boolean condition for loop statement
 
         status = Status.IS_ON;
-
         System.out.println(this);
 
-        moveJanuszUp();
-        moveJanuszUp();
+        System.out.println("========================");
+        System.out.println("Janusz starts playing...");
+        System.out.println("Lives left: " + lives);
 
-        moveJanuszLeft();
-        moveJanuszLeft();
+        while (System.currentTimeMillis() < end || status != Status.LOST || status != Status.LOST_BY_TIME || status != Status.WOOOOOOOOOOOOOOOoooooooooooooN) {
 
-        if (janusz.isOn(beer))
-            status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
-        else
-            status = Status.LOST;
+                moveJanuszUp();
+                moveJanuszUp();
+
+                moveJanuszLeft();
+                moveJanuszLeft();
+
+                moveJanuszUp();
+
+                moveJanuszLeft();
+                moveJanuszLeft();
+                moveJanuszLeft();
 
 
-        //TODO play in a loop
-        //TODO count time down
+                if (janusz.isOn(beer)) {
+                    status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
+                    System.out.println(this);
+                    break;
+                } else if (!janusz.isOn(beer) && timeEnd) {
+                    status = Status.LOST_BY_TIME;
+                    System.out.println(this);
+                    break;
+                } else {
+                    status = Status.LOST;
+                    System.out.println(this);
+                    break;
+                }
+        }
+
         //TODO listen for keyboard clicks
         //TODO refresh GUI
 
-        System.out.println(this);
-
         System.out.println("Janusz is done playing. ");
         System.out.println("========================");
+
     }
 
     private void moveJanuszLeft() {
