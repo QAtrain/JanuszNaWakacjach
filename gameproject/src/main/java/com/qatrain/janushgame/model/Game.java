@@ -11,21 +11,15 @@ package com.qatrain.janushgame.model;
 public class Game {
 
     public void run() {
-        play();
-        if (status == Status.LOST) {
-            --lives;
-            //cancel();
-            //canceling here will stop the task from running again
-            //the timer will run still
-        }
-
-        if (status == Status.LOST_BY_TIME) {
-            --lives;
-        }
-
-        if (lives == 0) {
-            //cancel(); //at this place program should exit - it does not
-            System.out.println("GAME OVER");
+        while (lives > 0) {
+            play();
+            if (status == Status.LOST || status == Status.LOST_BY_TIME) {
+                --lives;
+            }
+            if (lives == 0) {
+                System.out.println("Lives left: " + lives);
+                System.out.println("GAME OVER");
+            }
         }
     }
 
@@ -92,7 +86,7 @@ public class Game {
      */
     public void play() {
         long start = System.currentTimeMillis(); // order current system time as start time
-        long end = start + 10000; // order end time as current system time + 10 seconds
+        long end = start + 15000; // order end time as current system time + 10 seconds
         boolean timeEnd = (System.currentTimeMillis() == end); // boolean condition for loop statement
 
         status = Status.IS_ON;
@@ -100,37 +94,36 @@ public class Game {
 
         System.out.println("========================");
         System.out.println("Janusz starts playing...");
+        System.out.println("Lives left: " + lives);
 
-        while (System.currentTimeMillis() < end) {
+        while (System.currentTimeMillis() < end || status != Status.LOST || status != Status.LOST_BY_TIME || status != Status.WOOOOOOOOOOOOOOOoooooooooooooN) {
 
-            moveJanuszUp();
-            moveJanuszUp();
+                moveJanuszUp();
+                moveJanuszUp();
 
-            moveJanuszLeft();
-            moveJanuszLeft();
+                moveJanuszLeft();
+                moveJanuszLeft();
 
-            moveJanuszUp();
+                moveJanuszUp();
 
-            moveJanuszLeft();
-            moveJanuszLeft();
-            moveJanuszLeft();
+                moveJanuszLeft();
+                moveJanuszLeft();
+                moveJanuszLeft();
 
-            if (janusz.isOn(beer)) {
-                status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
-                System.out.println(this);
-                System.out.println("Lives left: " + lives);
-                break;
-            } else if (!janusz.isOn(beer) && timeEnd) {
-                status = Status.LOST_BY_TIME;
-                System.out.println(this);
-                System.out.println("Lives left: " + lives);
-                break;
-            } else {
-                status = Status.LOST;
-                System.out.println(this);
-                System.out.println("Lives left: " + lives);
-                break;
-            }
+
+                if (janusz.isOn(beer)) {
+                    status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
+                    System.out.println(this);
+                    break;
+                } else if (!janusz.isOn(beer) && timeEnd) {
+                    status = Status.LOST_BY_TIME;
+                    System.out.println(this);
+                    break;
+                } else {
+                    status = Status.LOST;
+                    System.out.println(this);
+                    break;
+                }
         }
 
         //TODO listen for keyboard clicks
