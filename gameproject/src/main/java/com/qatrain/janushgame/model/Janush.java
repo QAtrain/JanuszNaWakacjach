@@ -45,11 +45,6 @@ public class Janush extends Positionable {
         positionY++;
     }
 
-    //TODO moveRight
-
-    //TODO moveDown
-
-
     @Override
     public String toString() {
         return "Janush " + super.toString();

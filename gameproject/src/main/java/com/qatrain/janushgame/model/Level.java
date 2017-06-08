@@ -45,8 +45,8 @@ public class Level {
     enum Directions {
         UP(0),
         RIGHT(3),
-        LEFT(6),
-        DOWN(9);
+        LEFT(9),
+        DOWN(6);
 
         int clockPos;
 
@@ -94,19 +94,30 @@ public class Level {
 
         startTime = System.currentTimeMillis(); // order current system time as start time
 
+        int[] moves = {0, 9, 9, 0};
+        int i = 0;
+
         while (true) {
-            int random = (int) (Math.random() * 4) * 3;
+            //random moves
+            //int move = (int) (Math.random() * 4) * 3;
 
-            if (Directions.UP.clockPos == random)
+            //decided moves
+            int move = moves[i % 4];
+
+            if (Directions.UP.clockPos == move)
                 moveJanuszUp();
-            else if (Directions.LEFT.clockPos == random)
+            else if (Directions.LEFT.clockPos == move)
                 moveJanuszLeft();
-            else if (Directions.RIGHT.clockPos == random)
-                moveJanuszRight();
-            else if (Directions.DOWN.clockPos == random)
-                moveJanuszDown();
+//            else if (Directions.RIGHT.clockPos == random)
+//                moveJanuszRight();
+//            else if (Directions.DOWN.clockPos == random)
+//                moveJanuszDown();
 
-            updateStatus();
+            //group of moves
+//            moveJanuszUp();
+//            moveJanuszLeft();
+//            moveJanuszLeft();
+//            moveJanuszUp();
 
             if (isWon() || isLost())
                 break;
@@ -116,6 +127,8 @@ public class Level {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            i++;
         }
 
         //TODO listen for keyboard clicks
@@ -130,8 +143,12 @@ public class Level {
     }
 
     public boolean isLost() {
-        return status == Status.LOST_BY_TIME ||
-                status == Status.LOST;
+        return status == Status.LOST ||
+                status == Status.LOST_BY_TIME;
+    }
+
+    public boolean isStarted() {
+        return status == Status.IS_ON;
     }
 
     private void moveJanuszLeft() {
