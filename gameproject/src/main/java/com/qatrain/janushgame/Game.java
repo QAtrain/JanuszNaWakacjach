@@ -9,13 +9,14 @@ import com.qatrain.janushgame.model.Level;
 public class Game {
 
     public static void main(String... args) {
+
         int lives = Janush.LIVES_DEFAULT;
 
         while (lives > 0) {
             Level level = new Level();
             level.play();
 
-            if (level.lost() )
+            if (level.isLost() )
                 --lives;
         }
 

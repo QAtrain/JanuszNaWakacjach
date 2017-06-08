@@ -1,7 +1,5 @@
 package com.qatrain.janushgame.model;
 
-import static com.qatrain.janushgame.model.Level.Directions.*;
-
 /**
  * This is one small game on one level. It contains board, timer, janusz and beer.
  * <p>
@@ -51,6 +49,7 @@ public class Level {
         DOWN(9);
 
         int clockPos;
+
         Directions(int c) {
             clockPos = c;
         }
@@ -90,10 +89,10 @@ public class Level {
         System.out.println("==================================================================================================================");
         System.out.println("Janusz starts playing...");
 
-        startTime = System.currentTimeMillis(); // order current system time as start time
-
         status = Status.IS_ON;
         System.out.println(this);
+
+        startTime = System.currentTimeMillis(); // order current system time as start time
 
         while (true) {
             int random = (int) (Math.random() * 4) * 3;
@@ -102,11 +101,21 @@ public class Level {
                 moveJanuszUp();
             else if (Directions.LEFT.clockPos == random)
                 moveJanuszLeft();
+            else if (Directions.RIGHT.clockPos == random)
+                moveJanuszRight();
+            else if (Directions.DOWN.clockPos == random)
+                moveJanuszDown();
 
             updateStatus();
 
-            if (won() || lost())
+            if (isWon() || isLost())
                 break;
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
         //TODO listen for keyboard clicks
@@ -116,11 +125,11 @@ public class Level {
         System.out.println("==================================================================================================================");
     }
 
-    private boolean won() {
+    private boolean isWon() {
         return status == Status.WOOOOOOOOOOOOOOOoooooooooooooN;
     }
 
-    public boolean lost() {
+    public boolean isLost() {
         return status == Status.LOST_BY_TIME ||
                 status == Status.LOST;
     }
@@ -133,6 +142,18 @@ public class Level {
 
     private void moveJanuszUp() {
         janusz.moveUp();
+        updateStatus();
+        System.out.println(this);
+    }
+
+    private void moveJanuszRight() {
+        janusz.moveRight();
+        updateStatus();
+        System.out.println(this);
+    }
+
+    private void moveJanuszDown() {
+        janusz.moveDown();
         updateStatus();
         System.out.println(this);
     }

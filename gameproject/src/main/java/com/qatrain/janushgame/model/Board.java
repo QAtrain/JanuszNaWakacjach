@@ -43,7 +43,7 @@ public class Board {
         columns = 6;//(int) (Math.random() * COLUMNS_MAX) + COLUMNS_MIN; //The same as above
         board = new int[rows][columns];
 
-        System.out.println("Board created " + board.toString() + ".");
+        System.out.println("Board created " + this.toString() + ".");
     }
 
     /**
