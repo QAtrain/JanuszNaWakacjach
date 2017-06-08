@@ -39,8 +39,8 @@ public class Board {
     public void createBoard() {
         System.out.println("Creating board...");
 
-        rows = 6;//(int) (Math.random() * ROWS_MAX) + ROWS_MIN; //Random function from Math class returns the value between 0 and 1, so we have to use algorithm to create Board with 3 <= size <= 16
-        columns = 6;//(int) (Math.random() * COLUMNS_MAX) + COLUMNS_MIN; //The same as above
+        rows = (int) (Math.random() * ROWS_MAX) + ROWS_MIN; //Random function from Math class returns the value between 0 and 1, so we have to use algorithm to create Board with 3 <= size <= 16
+        columns = (int) (Math.random() * COLUMNS_MAX) + COLUMNS_MIN; //The same as above
         board = new int[rows][columns];
 
         System.out.println("Board created " + this.toString() + ".");
