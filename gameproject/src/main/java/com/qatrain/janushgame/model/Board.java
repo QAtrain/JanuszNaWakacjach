@@ -21,10 +21,10 @@ public class Board {
      * Setting static values which represent MAX and MIN quantity for ROWS and COLUMS in Board
      */
     public static final int ROWS_MIN = 3;
-    public static final int ROWS_MAX = 4; //in fact max value of ROWS is 16, but we have to set 13 to create random algorithm which can create correct board
+    public static final int ROWS_MAX = 7; //in fact max value of ROWS is 16, but we have to set 13 to create random algorithm which can create correct board
 
     public static final int COLUMNS_MIN = 3;
-    public static final int COLUMNS_MAX = 4; //the same situation as above
+    public static final int COLUMNS_MAX = 7; //the same situation as above
 
     /**
      * This method initializes board.
@@ -131,13 +131,13 @@ public class Board {
     }
 
     /**
-     * Puts a {@link Positionable} object (beer or janush) inside this board
+     * Puts a {@link Positioned} object (beer or janush) inside this board
      * (modifies postionX and Y of the object so that its coordinates are
      * inside this board).
      *
      * @param object object to be put inside board (which position will be altered)
      * */
-    public void placeInside(Positionable object) {
+    public void placeInside(Positioned object) {
         object.putOnGrid(this);
     }
 

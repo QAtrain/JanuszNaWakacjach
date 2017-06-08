@@ -25,7 +25,7 @@ public class Level {
      */
     Beer beer;
 
-    private static final long MAX_DURATION = 5000;
+    private static final long MAX_DURATION = 10000;
 
     long startTime;
 
@@ -180,6 +180,8 @@ public class Level {
             status = Status.WOOOOOOOOOOOOOOOoooooooooooooN;
         else if (System.currentTimeMillis() - MAX_DURATION > startTime)
             status = Status.LOST_BY_TIME;
+        else if (janusz.isOverboard(board))
+            status = Status.LOST;
     }
 
     @Override

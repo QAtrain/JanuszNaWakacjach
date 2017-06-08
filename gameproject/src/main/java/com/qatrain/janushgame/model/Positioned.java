@@ -35,6 +35,13 @@ public abstract class Positioned {
                 positionY == positionedObject.positionY;
     }
 
+    public boolean isOverboard(Board board) {
+        return !(positionX >=0 &&
+                positionX < board.getWidth() &&
+                positionY >= 0 &&
+                positionY < board.getHeight());
+    }
+
     @Override
     public String toString() {
         return "(" + positionX + ", " + positionY + ")";

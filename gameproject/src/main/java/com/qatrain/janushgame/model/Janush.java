@@ -6,7 +6,7 @@ package com.qatrain.janushgame.model;
  * He gets 3 lives at the beginning.
  * When time is over Janush looses live.
  */
-public class Janush extends Positionable {
+public class Janush extends Positioned {
 
     public final static int LIVES_DEFAULT = 3;
 
