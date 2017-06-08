@@ -6,9 +6,9 @@ package com.qatrain.janushgame.model;
  * Janusz needs to pick beer within timer frames to win the game. In case Janusz
  * does not pick beer within timer frames the beer is very warm - he looses the game.
  * <p>
- * Game object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
+ * Level object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
  */
-public class Game {
+public class Level {
 
     public void run() {
         while (lives > 0) {
@@ -55,9 +55,9 @@ public class Game {
     }
 
     /**
-     * Main Game constructor
+     * Main Level constructor
      */
-    public Game() {
+    public Level() {
         createGame();
     }
 
@@ -77,7 +77,7 @@ public class Game {
 
         status = Status.DID_NOT_START;
 
-        System.out.println("Game created. \n");
+        System.out.println("Level created. \n");
         System.out.println(this.toString());
     }
 
@@ -153,7 +153,7 @@ public class Game {
 
     @Override
     public String toString() {
-        return "Game " + status + ". \n" +
+        return "Level " + status + ". \n" +
                 "Grid: \n" +
                 grid.drawTable(janusz, beer);
 

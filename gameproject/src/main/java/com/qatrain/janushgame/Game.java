@@ -1,15 +1,15 @@
 package com.qatrain.janushgame;
 
-import com.qatrain.janushgame.model.Game;
+import com.qatrain.janushgame.model.Level;
 
 /**
  * This class starts the whole game.
  */
-public class MainApp {
+public class Game {
 
     public static void main(String... args) {
 
-        new Game().run();
+        new Level().run();
 
     }
 }
