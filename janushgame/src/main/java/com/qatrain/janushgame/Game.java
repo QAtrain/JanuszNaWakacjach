@@ -16,12 +16,17 @@ public class Game {
             Level level = new Level();
             level.play();
 
-            if (level.isLost() )
+            if (level.isLost())
                 --lives;
+
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
         System.out.println("Lives left: " + lives);
-        System.out.println("GAME OVER");
-
+        System.out.println("\nGAME is OVER\n");
     }
 }

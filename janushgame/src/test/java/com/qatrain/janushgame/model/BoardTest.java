@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.apache.commons.lang3.StringUtils;
 
 /** Tests Board methods. */
-public class GridTest {
+public class BoardTest {
 
     @Ignore
     @Test

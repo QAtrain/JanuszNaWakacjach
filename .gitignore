@@ -2,8 +2,10 @@
 .idea/
 **/*.class
 
+janushgame/target/**
+.DS_Store
+gameproject
 gameproject/target
-
 
 # Created by https://www.gitignore.io/api/java,intellij,intellij+iml
 
@@ -130,3 +132,8 @@ modules.xml
 hs_err_pid*
 
 # End of https://www.gitignore.io/api/java,intellij,intellij+iml
+gameproject/
+janush/target/classes/
+janush/target/generated-sources/
+janush/target/generated-test-sources/
+janush/target/maven-status/

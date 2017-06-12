@@ -39,8 +39,8 @@ public class Board {
     public void createBoard() {
         System.out.println("Creating board...");
 
-        rows = (int) (Math.random() * ROWS_MAX) + ROWS_MIN; //Random function from Math class returns the value between 0 and 1, so we have to use algorithm to create Board with 3 <= size <= 16
-        columns = (int) (Math.random() * COLUMNS_MAX) + COLUMNS_MIN; //The same as above
+        rows = (int) (Math.random() * (ROWS_MAX - ROWS_MIN)) + ROWS_MIN; //Random function from Math class returns the value between 0 and 1, so we have to use algorithm to create Board with 3 <= size <= 16
+        columns = (int) (Math.random() * (COLUMNS_MAX - COLUMNS_MIN)) + COLUMNS_MIN; //The same as above
         board = new int[rows][columns];
 
         System.out.println("Board created " + this.toString() + ".");
@@ -70,12 +70,12 @@ public class Board {
         String printout = "";
         for (int row = 0; row < rows; ++row) {
             printout += drawRow(board[row]);
-            if (row != rows - 1) {
-                for (int columns = 0; columns < this.columns; ++columns) {
-                    printout += "--"; //print horizontal partition
-                }
-                printout += "\n";
-            }
+//            if (row != rows - 1) {
+//                for (int columns = 0; columns < this.columns; ++columns) {
+//                    printout += "--"; //print horizontal partition
+//                }
+//                printout += "\n";
+//            }
         }
 
         return printout;
@@ -88,12 +88,12 @@ public class Board {
         String printout = "";
         for (int row = 0; row < rows; ++row) {
             printout += drawRow(board[row]);
-            if (row != rows - 1) {
-                for (int columns = 0; columns < this.columns; ++columns) {
-                    printout += "--"; //print horizontal partition
-                }
-                printout += "\n";
-            }
+//            if (row != rows - 1) {
+//                for (int columns = 0; columns < this.columns; ++columns) {
+//                    printout += "--"; //print horizontal partition
+//                }
+//                printout += "\n";
+//            }
         }
 
         return printout;

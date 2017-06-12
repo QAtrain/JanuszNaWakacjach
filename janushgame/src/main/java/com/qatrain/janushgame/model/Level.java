@@ -25,7 +25,7 @@ public class Level {
      */
     Beer beer;
 
-    private static final long MAX_DURATION = 10000;
+    private static final long MAX_DURATION = 30000;
 
     long startTime;
 
@@ -59,14 +59,14 @@ public class Level {
      * Main Level constructor
      */
     public Level() {
-        createGame();
+        createLevel();
     }
 
     /**
-     * This method initializes game.
+     * This method initializes game level.
      */
-    private void createGame() {
-        System.out.println("Creating game...");
+    private void createLevel() {
+        System.out.println("Creating level...");
 
         board = new Board();
 
@@ -86,7 +86,7 @@ public class Level {
      * Starts the game.
      */
     public void play() {
-        System.out.println("==================================================================================================================");
+        System.out.println("\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ");
         System.out.println("Janusz starts playing...");
 
         status = Status.IS_ON;
@@ -132,10 +132,9 @@ public class Level {
         }
 
         //TODO listen for keyboard clicks
-        //TODO refresh GUI
 
         System.out.println("Janusz is done playing. ");
-        System.out.println("==================================================================================================================");
+        System.out.println("==================================================================================================================\n");
     }
 
     private boolean isWon() {
@@ -186,7 +185,7 @@ public class Level {
 
     @Override
     public String toString() {
-        return "Level " + status + ". \n" +
+        return "Level: " + status + ". \n" +
                 "Board: " + board + "\n" +
                 board.drawTable(janusz, beer);
 
