@@ -1,9 +1,9 @@
 package com.qatrain.janushgame.model;
 
 /**
- * Grid resembles x / y grid on which Janusz and Beer are positioned.
+ * Board resembles x / y board on which Janusz and Beer are positioned.
  */
-public class Grid {
+public class Board {
     private int rows;
     private int columns;
 
@@ -18,36 +18,36 @@ public class Grid {
     static final int BOTH = 3;
 
     /**
-     * Setting static values which represent MAX and MIN quantity for ROWS and COLUMS in Grid
+     * Setting static values which represent MAX and MIN quantity for ROWS and COLUMS in Board
      */
-    public static final int ROWS_MIN = 2;
-    public static final int ROWS_MAX = 3; //in fact max value of ROWS is 16, but we have to set 13 to create random algorithm which can create correct grid
+    public static final int ROWS_MIN = 3;
+    public static final int ROWS_MAX = 7; //in fact max value of ROWS is 16, but we have to set 13 to create random algorithm which can create correct board
 
-    public static final int COLUMNS_MIN = 2;
-    public static final int COLUMNS_MAX = 3; //the same situation as above
+    public static final int COLUMNS_MIN = 3;
+    public static final int COLUMNS_MAX = 7; //the same situation as above
 
     /**
-     * This method initializes grid.
+     * This method initializes board.
      */
-    public Grid() {
-        createGrid();
+    public Board() {
+        createBoard();
     }
 
     /**
-     * Setting algorithm which can create random Grid using static values inside method
+     * Setting algorithm which can create random Board using static values inside method
      */
-    public void createGrid() {
-        System.out.println("Creating grid...");
+    public void createBoard() {
+        System.out.println("Creating board...");
 
-        rows = (int) (Math.random() * ROWS_MAX) + ROWS_MIN; //Random function from Math class returns the value between 0 and 1, so we have to use algorithm to create Grid with 3 <= size <= 16
-        columns = (int) (Math.random() * COLUMNS_MAX) + COLUMNS_MIN; //The same as above
+        rows = (int) (Math.random() * (ROWS_MAX - ROWS_MIN)) + ROWS_MIN; //Random function from Math class returns the value between 0 and 1, so we have to use algorithm to create Board with 3 <= size <= 16
+        columns = (int) (Math.random() * (COLUMNS_MAX - COLUMNS_MIN)) + COLUMNS_MIN; //The same as above
         board = new int[rows][columns];
 
-        System.out.println("Grid created.");
+        System.out.println("Board created " + this.toString() + ".");
     }
 
     /**
-     * This method draws grid with Janush and Beer on it
+     * This method draws board with Janush and Beer on it
      */
     public String drawTable(Janush janusz, Beer beer) {
         int jx = janusz.getPositionX();
@@ -70,30 +70,30 @@ public class Grid {
         String printout = "";
         for (int row = 0; row < rows; ++row) {
             printout += drawRow(board[row]);
-            if (row != rows - 1) {
-                for (int columns = 0; columns < this.columns; ++columns) {
-                    printout += "--"; //print horizontal partition
-                }
-                printout += "\n";
-            }
+//            if (row != rows - 1) {
+//                for (int columns = 0; columns < this.columns; ++columns) {
+//                    printout += "--"; //print horizontal partition
+//                }
+//                printout += "\n";
+//            }
         }
 
         return printout;
     }
 
     /**
-     * This method draws grid without Janush and Beer on it
+     * This method draws board without Janush and Beer on it
      */
     public String drawTable() {
         String printout = "";
         for (int row = 0; row < rows; ++row) {
             printout += drawRow(board[row]);
-            if (row != rows - 1) {
-                for (int columns = 0; columns < this.columns; ++columns) {
-                    printout += "--"; //print horizontal partition
-                }
-                printout += "\n";
-            }
+//            if (row != rows - 1) {
+//                for (int columns = 0; columns < this.columns; ++columns) {
+//                    printout += "--"; //print horizontal partition
+//                }
+//                printout += "\n";
+//            }
         }
 
         return printout;
@@ -131,23 +131,27 @@ public class Grid {
     }
 
     /**
-     * Puts a {@link Positioned} object (beer or janush) inside this grid
+     * Puts a {@link Positioned} object (beer or janush) inside this board
      * (modifies postionX and Y of the object so that its coordinates are
-     * inside this grid).
+     * inside this board).
      *
-     * @param object object to be put inside grid (which position will be altered)
+     * @param object object to be put inside board (which position will be altered)
      * */
     public void placeInside(Positioned object) {
         object.putOnGrid(this);
     }
 
-    /** Returns width of this grid. */
+    /** Returns width of this board. */
     public int getWidth() {
         return columns;
     }
 
-    /** Returns height of this grid. */
+    /** Returns height of this board. */
     public int getHeight() {
         return rows;
+    }
+
+    public String toString() {
+        return "(" + getWidth() + ", " + getHeight() + ")";
     }
 }

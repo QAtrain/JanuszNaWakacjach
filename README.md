@@ -1,6 +1,6 @@
 **Welcome to 'Janusz na wakacjach' game!** 
 
-This project is about exercizing creating a game and practicing wrtiting unit tests (or other) for it. 
+This project is about exercizing creating a game and practicing writing unit tests (or other) for it. 
 
 ## Technologies 
 
@@ -10,7 +10,7 @@ This project is about exercizing creating a game and practicing wrtiting unit te
 
 ## Where are docs
 
-Under [docs/](docs) folder.
+Under [docs/](../docs) folder.
 
 
 ## How to setup 
@@ -29,23 +29,40 @@ Open IntelliJ > **File > New > Project from Existing Sources... > Maven > select
 
 ### In IntelliJ
 
-Right click on `MainApp` class and click *Run*.
+In module `janushgame` right click on `MainApp` class and click *Run*.
 
 ### From command line
     
 From classes directory (`./target/classes` when building using IntelliJ):
 
-    java -cp . com.qatrain.janushgame.MainApp
+    java -cp . com.qatrain.janush.MainApp
+    
+### From command line using jar
+
+After building a jar (see below) run from main project directory: 
+
+    java -jar janushgame-<version>.jar
+    
+For example: 
+    
+    java -jar janushgame-1.0.0-SNAPSHOT.jar
 
 ### Maven 
 
 
 ## How to test 
 
-    cd gameproject
+    cd janushgame
     mvn clean test
     
     
 ## How to build 
 
+    cd janushgame
     mvn clean install
+
+## How to create a jar
+
+    cd janushgame
+    mvn clean package
+

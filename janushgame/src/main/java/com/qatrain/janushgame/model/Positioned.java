@@ -8,10 +8,10 @@ public abstract class Positioned {
     protected int positionY = 0;
 
     /**
-     * Places this object inside grid's frames.
-     * @param grid to be used for dimensions
+     * Places this object inside board's frames.
+     * @param board to be used for dimensions
      * */
-    public abstract void putOnGrid(Grid grid);
+    public abstract void putOnGrid(Board board);
 
     /** @return this object's position on X axis */
     public int getPositionX() {
@@ -33,6 +33,13 @@ public abstract class Positioned {
     public boolean isOn(Positioned positionedObject) {
         return positionX == positionedObject.positionX &&
                 positionY == positionedObject.positionY;
+    }
+
+    public boolean isOverboard(Board board) {
+        return !(positionX >=0 &&
+                positionX < board.getWidth() &&
+                positionY >= 0 &&
+                positionY < board.getHeight());
     }
 
     @Override
