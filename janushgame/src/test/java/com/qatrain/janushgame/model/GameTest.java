@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class GameTest {
-
+    
     @Test
     public void shouldGetNoLives() {
         Game game = new Game();
