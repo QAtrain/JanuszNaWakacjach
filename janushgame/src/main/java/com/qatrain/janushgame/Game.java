@@ -9,7 +9,11 @@ import com.qatrain.janushgame.model.Level;
 public class Game {
 
     public static void main(String... args) {
+        Game game = new Game();
+        game.Start();
+    }
 
+    public int Start() {
         int lives = Janush.LIVES_DEFAULT;
 
         while (lives > 0) {
@@ -28,5 +32,6 @@ public class Game {
 
         System.out.println("Lives left: " + lives);
         System.out.println("\nGAME is OVER\n");
+        return lives;
     }
 }
