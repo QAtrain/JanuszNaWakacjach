@@ -14,14 +14,14 @@ public class Game {
     }
 
     public int Start() {
-        int lives = Janush.LIVES_DEFAULT;
+        int lifes = Janush.LIFES_DEFAULT;
 
-        while (lives > 0) {
+        while (lifes > 0) {
             Level level = new Level();
             level.play();
 
             if (level.isLost())
-                --lives;
+                --lifes;
 
             try {
                 Thread.sleep(3000);
@@ -30,8 +30,8 @@ public class Game {
             }
         }
 
-        System.out.println("Lives left: " + lives);
+        System.out.println("Lifes left: " + lifes);
         System.out.println("\nGAME is OVER\n");
-        return lives;
+        return lifes;
     }
 }
