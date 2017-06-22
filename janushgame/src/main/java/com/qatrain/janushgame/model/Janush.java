@@ -26,26 +26,26 @@ public class Janush extends Positioned {
     }
 
     public void moveUp() {
-        System.out.print(this + " moves         ^ UPUP ^");
-        positionY--;
+        System.out.print(this + " moves         UP ^^^^^");
+        positionY++;
         System.out.println(" > " + super.toString());
     }
 
     public void moveLeft() {
-        System.out.print(this + " moves <<<<<<< LEFT");
+        System.out.print(this + " moves         LEFT <<<<<");
         positionX--;
         System.out.println(" > " + super.toString());
     }
 
     public void moveRight() {
-        System.out.print(this + " moves         RIGHT >>>>>>>>>>>");
+        System.out.print(this + " moves         RIGHT >>>>>");
         positionX++;
         System.out.println(" > " + super.toString());
     }
 
     public void moveDown() {
-        System.out.print(this + " moves        v down v");
-        positionY++;
+        System.out.print(this + " moves         DOWN vvvvv");
+        positionY--;
         System.out.println(" > " + super.toString());
     }
 
