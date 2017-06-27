@@ -1,8 +1,6 @@
 import java.io.*;
 
 /**
- * Runs only from console <code>java -cp ./target/classes ConsoleMoves"</code>
- *
  * Uses <code>System.Console</code>, <code>BufferedReader</code> or raw <code>System.in</code> to move on screen.
  * After every move, or set of moves, requires ENTER to be pressed.
  */
@@ -39,7 +37,10 @@ public class ConsoleMoves {
         int x = 20;
         int y = 10;
 
-        //char array is needed to build string for arrow keys - they are not one character but set of such
+        //char array is needed to recognise arrow keys
+        //arrow keys are not like regular characters (a, b, c...)
+        //arrow keys are not one character but set of such
+        //therefore the charArray - to put them together and recognise as arrow key
         String charArray = "";
 
         boolean exit = false;
@@ -64,19 +65,15 @@ public class ConsoleMoves {
             //read all chars from input one by one
             for (char c : input.toCharArray()) {
                 if (c == 'a' || (charArray + c).equals(ARROW_LEFT)) {
-                    //System.out.println("<..");
                     x--;
                     charArray = "";
                 } else if (c == 'd' || (charArray + c).equals(ARROW_RIGHT)) {
-                    //System.out.println("..>");
                     x++;
                     charArray = "";
                 } else if (c == 's' || (charArray + c).equals(ARROW_DOWN)) {
-                    //System.out.println("._.");
                     y++;
                     charArray = "";
                 } else if (c == 'w' || (charArray + c).equals(ARROW_UP)) {
-                    //System.out.println(".^.");
                     y--;
                     charArray = "";
                 } else {
