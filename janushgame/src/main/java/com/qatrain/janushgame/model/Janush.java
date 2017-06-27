@@ -4,7 +4,7 @@ package com.qatrain.janushgame.model;
  * Class Janush describes an object which appears on board and can change position.
  * His goal is to collect beer.
  * He gets 3 lives at the beginning.
- * When time is over Janush looses live.
+ * When time is over Janush looses life.
  */
 public class Janush extends Positioned {
 

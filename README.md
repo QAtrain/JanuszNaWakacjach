@@ -2,30 +2,37 @@
 
 This project is about exercizing creating a game and practicing writing unit tests (or other) for it. 
 
-## Technologies 
+Technologies
+------------
 
  * Java 
- * Maven  
+ * Maven 
+ * JUnit 
+ * Hamcrest
 
 
-## Where are docs
+Where are docs
+--------------
 
 Under [docs/](../docs) folder.
 
 
-## How to setup 
+How to setup
+------------
 
-Clone github repo: 
+Clone github repo:
 
     git clone https://github.com/QAtrain/janusz-na-wakacjach.git
 
 
-## How to setup in IntelliJ
+How to open in IntelliJ
+-----------------------
 
 Open IntelliJ > **File > New > Project from Existing Sources... > Maven > select "Search for projects recursively" and "import Maven projects automatically" > Next > Next** 
 
 
-## How to run
+How to run
+----------
 
 ### In IntelliJ
 
@@ -46,23 +53,35 @@ After building a jar (see below) run from main project directory:
 For example: 
     
     java -jar janushgame-1.0.0-SNAPSHOT.jar
+    
 
-### Maven 
+Maven 
+=====
 
-
-## How to test 
+How to test
+-----------
 
     cd janushgame
     mvn clean test
     
     
-## How to build 
+How to build
+------------
 
     cd janushgame
     mvn clean install
 
-## How to create a jar
+How to create a jar
+--------------------
 
     cd janushgame
     mvn clean package
 
+
+How to try console moves
+------------------------
+
+    cd janushgame
+    mvn clean test
+    clear
+    java -cp ./target/classes/ ConsoleMoves

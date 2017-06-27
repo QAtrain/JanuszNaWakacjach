@@ -38,7 +38,7 @@ public class Level {
         WOOOOOOOOOOOOOOOoooooooooooooN,
         LOST,
         LOST_BY_TIME,
-        IS_ON,
+        STARTED,
         DID_NOT_START
     }
 
@@ -89,7 +89,7 @@ public class Level {
         System.out.println("\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ");
         System.out.println("Janusz starts playing...");
 
-        status = Status.IS_ON;
+        status = Status.STARTED;
         System.out.println(this);
 
         startTime = System.currentTimeMillis(); // order current system time as start time
@@ -147,7 +147,7 @@ public class Level {
     }
 
     public boolean isStarted() {
-        return status == Status.IS_ON;
+        return status == Status.STARTED;
     }
 
     private void moveJanuszLeft() {
