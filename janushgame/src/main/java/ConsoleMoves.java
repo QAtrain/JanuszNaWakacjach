@@ -80,7 +80,9 @@ public class ConsoleMoves {
                     charArray += c;
                 }
 
+                //move cursor to position chosen by user pressing keys
                 moveCursor(y,x);
+                //put a stamp at that place
                 System.out.print("*");
 
                 if (c == 'x')
@@ -89,6 +91,7 @@ public class ConsoleMoves {
 
         }
 
+        //move cursor to top of screen
         moveCursor(1, 1);
     }
 
