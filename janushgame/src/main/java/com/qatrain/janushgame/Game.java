@@ -7,15 +7,14 @@ import com.qatrain.janushgame.model.Level;
  * This class starts the whole game.
  */
 public class Game {
+    int lifes = Janush.LIFES_DEFAULT;
 
     public static void main(String... args) {
         Game game = new Game();
-        game.Start();
+        game.start();
     }
 
-    public int Start() {
-        int lifes = Janush.LIFES_DEFAULT;
-
+    public int start() {
         while (lifes > 0) {
             Level level = new Level();
             level.play();
@@ -32,6 +31,7 @@ public class Game {
 
         System.out.println("Lifes left: " + lifes);
         System.out.println("\nGAME is OVER\n");
+
         return lifes;
     }
 }
