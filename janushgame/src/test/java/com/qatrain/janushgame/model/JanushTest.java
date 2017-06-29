@@ -45,7 +45,7 @@ public class JanushTest {
         janusz.moveUp();
         System.out.println(janusz);
 
-        assertEquals("Janusz moved up", 6, janusz.positionY);
+        assertEquals("Janusz moved up", 4, janusz.positionY);
 
 
     }
@@ -59,7 +59,7 @@ public class JanushTest {
         janusz.moveDown();
         System.out.println(janusz);
 
-        assertEquals("Janusz moved down", 4, janusz.positionY);
+        assertEquals("Janusz moved down", 6, janusz.positionY);
 
 
     }
@@ -114,7 +114,7 @@ public class JanushTest {
         System.out.println(janusz);
         System.out.println(januszStartPosition);
 
-        assertEquals("Janusz moved up from random position", januszStartPosition + 1, janusz.positionY);
+        assertEquals("Janusz moved up from random position", januszStartPosition - 1, janusz.positionY);
 
 
 
@@ -134,9 +134,10 @@ public class JanushTest {
         System.out.println(janusz);
         System.out.println(januszStartPosition);
 
-        assertEquals("Janusz moved down from random position", januszStartPosition - 1, janusz.positionY);
+        assertEquals("Janusz moved down from random position", januszStartPosition + 1, janusz.positionY);
 
 
 
     }
+
 }
