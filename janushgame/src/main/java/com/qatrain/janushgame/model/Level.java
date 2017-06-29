@@ -14,7 +14,7 @@ import java.io.Console;
  * (we could have restart of same game but we did not plan for it)
  *
  * This class is in charge of printing things in proper places on screen.
- * Other classes can print, but they have no idea where - they are blind. 
+ * Other classes can print, but they have no idea where - they are blind.
  */
 public class Level extends ConsoleMoves {
 
