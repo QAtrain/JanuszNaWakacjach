@@ -17,7 +17,7 @@ public class Game {
         if (console == null) {
             System.out.println(
                     "Can't run in non-interactive mode! Run in console using: \n" +
-                            "     java -cp ./target/classes com.qatrain.janushgame.ConsoleMoves \n");
+                            "     java -cp ./target/classes com.qatrain.janushgame.Game \n");
             System.exit(0);
         }
 

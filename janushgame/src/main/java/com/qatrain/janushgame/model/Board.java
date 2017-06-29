@@ -20,11 +20,11 @@ public class Board {
     /**
      * Setting static values which represent MAX and MIN quantity for ROWS and COLUMS in Board
      */
-    public static final int ROWS_MIN = 3;
-    public static final int ROWS_MAX = 7; //in fact max value of ROWS is 16, but we have to set 13 to create random algorithm which can create correct board
+    public static final int ROWS_MIN = 13;
+    public static final int ROWS_MAX = 17; //in fact max value of ROWS is 16, but we have to set 13 to create random algorithm which can create correct board
 
-    public static final int COLUMNS_MIN = 3;
-    public static final int COLUMNS_MAX = 7; //the same situation as above
+    public static final int COLUMNS_MIN = 13;
+    public static final int COLUMNS_MAX = 17; //the same situation as above
 
     /**
      * This method initializes board.
