@@ -1,3 +1,5 @@
+package com.qatrain.janushgame;
+
 import java.io.*;
 
 /**
@@ -5,13 +7,16 @@ import java.io.*;
  * After every move, or set of moves, requires ENTER to be pressed.
  */
 public class ConsoleMoves {
-    static final char ESC_CODE = 0x1B;
+    protected static final char ESC_CODE = 0x1B;
 
-    static final String ARROW_UP = ESC_CODE + "[A";
-    static final String ARROW_DOWN = ESC_CODE + "[B";
-    static final String ARROW_RIGHT = ESC_CODE + "[C";
-    static final String ARROW_LEFT = ESC_CODE + "[D";
+    protected static final String ARROW_UP = ESC_CODE + "[A";
+    protected static final String ARROW_DOWN = ESC_CODE + "[B";
+    protected static final String ARROW_RIGHT = ESC_CODE + "[C";
+    protected static final String ARROW_LEFT = ESC_CODE + "[D";
 
+    //column to put cursor at start
+    protected static final int TYPYING_COLUMN = 1;
+    protected static final int TYPYING_ROW = 13;
 
     public static void main(String ... args) throws IOException {
 
@@ -20,7 +25,7 @@ public class ConsoleMoves {
         if (console == null) {
             System.out.println(
                     "Can't run in non-interactive mode! Run in console using: \n" +
-                    "     java -cp ./target/classes ConsoleMoves \n");
+                    "     java -cp ./target/classes com.qatrain.janushgame.ConsoleMoves \n");
             System.exit(0);
         }
 
@@ -31,7 +36,7 @@ public class ConsoleMoves {
         //way 2
         //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        int startColumn = 10;
+        int startColumn = 20;
 
         //position of cursor
         int x = 20;
@@ -46,7 +51,7 @@ public class ConsoleMoves {
         boolean exit = false;
         while (!exit) {
             //initial position on screen
-            moveCursor(6, startColumn);
+            gotoRowCol(20, startColumn);
 
             //----------
             //way 3: using System.in
@@ -81,7 +86,7 @@ public class ConsoleMoves {
                 }
 
                 //move cursor to position chosen by user pressing keys
-                moveCursor(y,x);
+                gotoRowCol(y,x);
                 //put a stamp at that place
                 System.out.print("*");
 
@@ -92,11 +97,12 @@ public class ConsoleMoves {
         }
 
         //move cursor to top of screen
-        moveCursor(1, 1);
+        gotoRowCol(1, 1);
     }
 
-    /** This method moves cursor to column / row .*/
-    private static void moveCursor(int row, int column) {
+    /** This method moves cursor to column / row.
+     * See also {@link http://www.termsys.demon.co.uk/vtansi.htm} */
+    protected static void gotoRowCol(int row, int column) {
         System.out.print(String.format("%c[%d;%df", ESC_CODE, row, column));
     }
 }

@@ -27,7 +27,7 @@ public class Janush extends Positioned {
 
     public void moveUp() {
         System.out.print(this + " moves         UP ^^^^^");
-        positionY++;
+        positionY--;
         System.out.println(" > " + super.toString());
     }
 
@@ -45,7 +45,7 @@ public class Janush extends Positioned {
 
     public void moveDown() {
         System.out.print(this + " moves         DOWN vvvvv");
-        positionY--;
+        positionY++;
         System.out.println(" > " + super.toString());
     }
 

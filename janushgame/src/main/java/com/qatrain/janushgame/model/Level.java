@@ -1,14 +1,22 @@
 package com.qatrain.janushgame.model;
 
+import com.qatrain.janushgame.ConsoleMoves;
+
+import java.io.Console;
+
 /**
  * This is one small game on one level. It contains board, timer, janusz and beer.
  * <p>
  * Janusz needs to pick beer within timer frames to win the game. In case Janusz
  * does not pick beer within timer frames the beer is very warm - he looses the game.
  * <p>
- * Level object is one usage. Another game needs to be created to be played. (we could have restart of same game but we did not plan for it)
+ * Level object is one usage. Another game needs to be created to be played.
+ * (we could have restart of same game but we did not plan for it)
+ *
+ * This class is in charge of printing things in proper places on screen.
+ * Other classes can print, but they have no idea where - they are blind. 
  */
-public class Level {
+public class Level extends ConsoleMoves {
 
     /**
      * Board or board for this game.
@@ -66,6 +74,8 @@ public class Level {
      * This method initializes game level.
      */
     private void createLevel() {
+        gotoStartPosition();
+
         System.out.println("Creating level...");
 
         board = new Board();
@@ -79,62 +89,82 @@ public class Level {
         status = Status.DID_NOT_START;
 
         System.out.println("Level created. \n");
-        System.out.println(this);
     }
 
     /**
      * Starts the game.
      */
-    public void play() {
-        System.out.println("\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ");
-        System.out.println("Janusz starts playing...");
+    public void play(Console console) {
+        //System.out.println("\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ");
+        //System.out.println("Janusz starts playing...");
+
+        //go to where board should be printed on screen
+        gotoBoardPosition();
+        //draw board
+        System.out.println(this);
 
         status = Status.STARTED;
-        System.out.println(this);
+        //System.out.println(this);
 
         startTime = System.currentTimeMillis(); // order current system time as start time
 
-        int[] moves = {0, 9, 9, 0};
-        int i = 0;
+        //char array is needed to recognise arrow keys
+        //arrow keys are not like regular characters (a, b, c...)
+        //arrow keys are not one character but set of such
+        //therefore the charArray - to put them together and recognise as arrow key
+        String charArray = "";
 
-        while (true) {
-            //random moves
-            //int move = (int) (Math.random() * 4) * 3;
+        boolean exit = false;
+        while (!exit) {
+            //initial cursor position on screen - for typying
+            gotoTypyingPosition();
 
-            //decided moves
-            int move = moves[i % 4];
+            //read what user types - it waits for enter to be pressed
+            String input = console.readLine();
 
-            if (Directions.UP.clockPos == move)
-                moveJanuszUp();
-            else if (Directions.LEFT.clockPos == move)
-                moveJanuszLeft();
-//            else if (Directions.RIGHT.clockPos == random)
-//                moveJanuszRight();
-//            else if (Directions.DOWN.clockPos == random)
-//                moveJanuszDown();
+            //read all chars from input one by one
+            for (char c : input.toCharArray()) {
+                if (c == 'a' || (charArray + c).equals(ARROW_LEFT)) {
+                    moveJanuszLeft();
+                    charArray = "";
+                } else if (c == 'd' || (charArray + c).equals(ARROW_RIGHT)) {
+                    moveJanuszRight();
+                    charArray = "";
+                } else if (c == 's' || (charArray + c).equals(ARROW_DOWN)) {
+                    moveJanuszDown();
+                    charArray = "";
+                } else if (c == 'w' || (charArray + c).equals(ARROW_UP)) {
+                    moveJanuszUp();
+                    charArray = "";
+                } else {
+                    charArray += c;
+                }
 
-            //group of moves
-//            moveJanuszUp();
-//            moveJanuszLeft();
-//            moveJanuszLeft();
-//            moveJanuszUp();
+                //move cursor to board position - for drawing board
+                gotoBoardPosition();
+                //draw board
+                System.out.print(this);
 
-            if (isWon() || isLost())
-                break;
+                if (isWon() || isLost()) {
+                    exit = true;
+                    break;
+                }
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                if (c == 'x')
+                    exit = true;
             }
-
-            i++;
         }
 
-        //TODO listen for keyboard clicks
+        gotoTypyingPosition();
+        System.out.print(String.format("%1$100s", " "));
 
-        System.out.println("Janusz is done playing. ");
-        System.out.println("==================================================================================================================\n");
+        gotoBoardPosition();
+        for (int i = 0; i < board.getHeight(); i++) {
+            System.out.println(String.format("%1$" + board.getWidth() * 2 + "s", " "));
+        }
+
+        gotoLogPosition();
+        System.out.println("Janusz is done playing (" + status + "). ");
     }
 
     private boolean isWon() {
@@ -151,27 +181,27 @@ public class Level {
     }
 
     private void moveJanuszLeft() {
+        gotoLogPosition();
         janusz.moveLeft();
         updateStatus();
-        System.out.println(this);
     }
 
     private void moveJanuszUp() {
+        gotoLogPosition();
         janusz.moveUp();
         updateStatus();
-        System.out.println(this);
     }
 
     private void moveJanuszRight() {
+        gotoLogPosition();
         janusz.moveRight();
         updateStatus();
-        System.out.println(this);
     }
 
     private void moveJanuszDown() {
+        gotoLogPosition();
         janusz.moveDown();
         updateStatus();
-        System.out.println(this);
     }
 
     private void updateStatus() {
@@ -185,10 +215,27 @@ public class Level {
 
     @Override
     public String toString() {
-        return "Level: " + status + ". \n" +
-                "Board: " + board + "\n" +
+        return //"Level: " + status + ". \n" +
+                // "Board: " + board + "\n" +
                 board.drawTable(janusz, beer);
 
         //(timer <= 0 ? "because timer finished. The beer is warm now. " : "Time left was " + timer + ". The beer got spilled! No beer for Janusz this time. ");
+    }
+
+    private void gotoTypyingPosition() {
+        gotoRowCol(TYPYING_ROW, TYPYING_COLUMN);
+    }
+
+    private void gotoLogPosition() {
+        gotoRowCol(1, 70);
+    }
+
+    private void gotoBoardPosition() {
+        gotoRowCol(TYPYING_ROW + 5, 1);
+    }
+
+
+    private void gotoStartPosition() {
+        gotoRowCol(5, 1);
     }
 }
