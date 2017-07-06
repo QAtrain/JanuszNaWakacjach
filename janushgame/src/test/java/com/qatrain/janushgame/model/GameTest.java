@@ -9,7 +9,7 @@ public class GameTest {
 
     @Ignore
     @Test
-    public void shouldGetNoLives() {
+    public void shouldGetNoLifes() {
         Game game = new Game();
         int getLives = game.start();
         int expectedLives = 0;
