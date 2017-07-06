@@ -11,8 +11,8 @@ public class GameTest {
     @Test
     public void shouldGetNoLives() {
         Game game = new Game();
-        int getLives = game.start();
-        int expectedLives = 0;
-        Assert.assertEquals(expectedLives, getLives);
+        int getLifes = game.start();
+        int expectedLifes = 0;
+        Assert.assertEquals(expectedLifes, getLifes);
     }
 }
