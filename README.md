@@ -22,7 +22,7 @@ NOTE: it runs on Windows but looks crap and arrow buttons don't work.
 Where are docs
 --------------
 
-Under [docs/](../docs) folder.
+Under [docs/](/docs) folder.
 
 
 How to setup
@@ -36,8 +36,7 @@ Clone github repo:
 How to open in IntelliJ
 -----------------------
 
-Open IntelliJ > **File > New > Project from Existing Sources... > Maven > select "Search for projects recursively" and "import Maven projects automatically" > Next > Next** 
-
+Open IntelliJ > **File > New > Project from Existing Sources... > Choose janushgame module > Maven > select "Search for projects recursively" and "import Maven projects automatically" > Next > Next** 
 
 
 How to build
@@ -45,6 +44,7 @@ How to build
 
     cd janushgame
     mvn clean install
+
 
 How to test
 -----------
@@ -60,17 +60,10 @@ How to create a jar
     mvn clean package
 
 
-How to try console moves
-------------------------
-
-    cd janushgame
-    mvn clean test
-    clear
-    java -cp ./target/classes/ ConsoleMoves
-    
-
 How to run
 ==========
+
+Note: game needs real console. In case you are in GIT Bash / IntelliJ console you will be alerted with a msg about fake console. Real console is for example Terminal on Mac OSX. 
 
 ### From command line
 
@@ -78,9 +71,10 @@ After building and running tests - from classes directory (`./target/classes` wh
 
     java -cp . com.qatrain.janushgame.Game
     
+
 ### From command line using jar
 
-Run from module directory: 
+On Linux / \*nix / OSX system run from module directory: 
     
     cd janushgame
     mvn clean package
@@ -90,3 +84,9 @@ Run from module directory:
 For example: 
     
     java -jar janushgame-1.0.jar
+
+
+Issue tracker
+=============
+
+Check out [Trello](https://trello.com/b/9wxF1KN5/weekly-janusz-planing).
