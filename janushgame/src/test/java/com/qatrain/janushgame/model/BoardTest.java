@@ -5,7 +5,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.apache.commons.lang3.StringUtils;
 
-/** Tests Board methods. */
+/**
+ * Tests Board methods.
+ */
 public class BoardTest {
 
     @Ignore
@@ -18,7 +20,7 @@ public class BoardTest {
     @Test
     public void verifyAmountOfPaleczekInFirstAndLastLine() {
         //Board board = new Board();
-        //String printout = board.drawTable();
+        //String printout = board.drawBoard();
         //assert printout.contains("|"); //TODO this is dummy test
     }
 
@@ -32,7 +34,7 @@ public class BoardTest {
     @Test
     public void verifyAmountOfRowsDisplayed() {
         Board board = new Board();
-        String displayedGrid = board.drawTable();
+        String displayedGrid = board.drawBoard();
         System.out.println("Table preview: " + "\n" + displayedGrid); //displaying comparable Board for preview
         System.out.println("Number of rows should be: " + board.getHeight()); //displaying number of rows got from algorithm
 

@@ -1,6 +1,7 @@
 package com.qatrain.janushgame.model;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 /**
@@ -117,7 +118,6 @@ public class JanushTest {
         assertEquals("Janusz moved up from random position", januszStartPosition - 1, janusz.positionY);
 
 
-
     }
 
     @Test
@@ -135,7 +135,6 @@ public class JanushTest {
         System.out.println(januszStartPosition);
 
         assertEquals("Janusz moved down from random position", januszStartPosition + 1, janusz.positionY);
-
 
 
     }

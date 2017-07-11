@@ -19,7 +19,7 @@ public class Janush extends Positioned {
     /**
      * Puts this janusz on board's last row and column.
      * TODO randomize position
-     * */
+     */
     public void putOnGrid(Board board) {
         positionX = board.getWidth() - 1;
         positionY = board.getHeight() - 1;

@@ -18,14 +18,14 @@ public class ConsoleMoves {
     protected static final int TYPYING_COLUMN = 1;
     protected static final int TYPYING_ROW = 13;
 
-    public static void main(String ... args) throws IOException {
+    public static void main(String... args) throws IOException {
 
         //way 1
         Console console = System.console();
         if (console == null) {
             System.out.println(
                     "Can't run in non-interactive mode! Run in console using: \n" +
-                    "     java -cp ./target/classes com.qatrain.janushgame.ConsoleMoves \n");
+                            "     java -cp ./target/classes com.qatrain.janushgame.ConsoleMoves \n");
             System.exit(0);
         }
 
@@ -86,7 +86,7 @@ public class ConsoleMoves {
                 }
 
                 //move cursor to position chosen by user pressing keys
-                gotoRowCol(y,x);
+                gotoRowCol(y, x);
                 //put a stamp at that place
                 System.out.print("*");
 
@@ -100,8 +100,13 @@ public class ConsoleMoves {
         gotoRowCol(1, 1);
     }
 
-    /** This method moves cursor to column / row.
-     * See also {@link http://www.termsys.demon.co.uk/vtansi.htm} */
+    /**
+     * This method moves cursor to column / row.
+     * See also http://www.termsys.demon.co.uk/vtansi.htm
+     *
+     * @param row row index from top
+     * @param column column index from left
+     */
     protected static void gotoRowCol(int row, int column) {
         System.out.print(String.format("%c[%d;%df", ESC_CODE, row, column));
     }

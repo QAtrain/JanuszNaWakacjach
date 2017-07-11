@@ -12,9 +12,9 @@ public class Beer extends Positioned {
 
     /**
      * Puts this beer at first row and column.
-     *
+     * <p>
      * TODO randomize position
-     * */
+     */
     public void putOnGrid(Board board) {
         positionX = 0;
         positionY = 0;

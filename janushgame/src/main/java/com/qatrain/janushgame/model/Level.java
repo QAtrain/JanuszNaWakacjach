@@ -12,7 +12,7 @@ import java.io.Console;
  * <p>
  * Level object is one usage. Another game needs to be created to be played.
  * (we could have restart of same game but we did not plan for it)
- *
+ * <p>
  * This class is in charge of printing things in proper places on screen.
  * Other classes can print, but they have no idea where - they are blind.
  */
@@ -93,6 +93,7 @@ public class Level extends ConsoleMoves {
 
     /**
      * Starts the game.
+     * @param console the console to play the game at
      */
     public void play(Console console) {
         //System.out.println("\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ");
@@ -217,7 +218,7 @@ public class Level extends ConsoleMoves {
     public String toString() {
         return //"Level: " + status + ". \n" +
                 // "Board: " + board + "\n" +
-                board.drawTable(janusz, beer);
+                board.drawBoard(janusz, beer);
 
         //(timer <= 0 ? "because timer finished. The beer is warm now. " : "Time left was " + timer + ". The beer got spilled! No beer for Janusz this time. ");
     }

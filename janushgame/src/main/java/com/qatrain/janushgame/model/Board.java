@@ -48,8 +48,11 @@ public class Board {
 
     /**
      * This method draws board with Janush and Beer on it
+     * @param beer beer to be put on board
+     * @param janusz janush to be put on board
+     * @return string representation of the board
      */
-    public String drawTable(Janush janusz, Beer beer) {
+    public String drawBoard(Janush janusz, Beer beer) {
         int jx = janusz.getPositionX();
         int jy = janusz.getPositionY();
         int bx = beer.getPositionX();
@@ -78,8 +81,9 @@ public class Board {
 
     /**
      * This method draws board without Janush and Beer on it
+     * @return string representation of board
      */
-    public String drawTable() {
+    public String drawBoard() {
         String printout = "";
         for (int row = 0; row < rows; ++row) {
             printout += drawRow(board[row]);
@@ -90,11 +94,13 @@ public class Board {
 
     /**
      * This method draws single row
+     * @param row the row contents to draw
+     * @return string representation of the row
      */
-    private String drawRow(int[] ints) {
+    private String drawRow(int[] row) {
         String printout = "";
         for (int column = 0; column < columns; ++column) {
-            printout += printCell(ints[column]); //print each of the cells
+            printout += printCell(row[column]); //print each of the cells
             printout += ("|"); //print vertical partition
         }
         printout += "\n";
@@ -102,10 +108,14 @@ public class Board {
     }
 
     /**
-     * This method prints a cell with a specified 'content' (for now - it's using only EMPTY case, )
+     * This method prints a cell depending on its value
+     * @param cellContentAsInt integer content of a cell representing
+     *                         either Janush, Beer or Janush on Beer
+     * @return depending on contents of the cell:
+     * J, B, X for Janush, Beer and Janush on Beer respectively
      */
-    private String printCell(int content) {
-        switch (content) {
+    private String printCell(int cellContentAsInt) {
+        switch (cellContentAsInt) {
             case EMPTY:
                 return " "; //for now it will always get this case and generate empty board
             case JANUSH:
@@ -125,17 +135,23 @@ public class Board {
      * inside this board).
      *
      * @param object object to be put inside board (which position will be altered)
-     * */
+     */
     public void placeInside(Positioned object) {
         object.putOnGrid(this);
     }
 
-    /** Returns width of this board. */
+    /**
+     * Returns width of this board.
+     * @return number of columns
+     */
     public int getWidth() {
         return columns;
     }
 
-    /** Returns height of this board. */
+    /**
+     * Returns height of this board.
+     * @return number of rows
+     */
     public int getHeight() {
         return rows;
     }
